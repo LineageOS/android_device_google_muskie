@@ -43,6 +43,9 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/muskie/kernel-headers
 
 TARGET_NO_BOOTLOADER := true
 
+# Install odex files into the other system image
+BOARD_USES_SYSTEM_OTHER_ODEX := true
+
 BOARD_ROOT_EXTRA_FOLDERS := persist firmware
 
 TARGET_USES_HWC2 := true
