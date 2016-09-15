@@ -49,3 +49,39 @@ on fs
 
     wait /dev/block/bootdevice/by-name/modem
     mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+
+on post-fs
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
+    # Since bootloader does not have a UI turn screen ON
+    write /sys/class/leds/lcd-backlight/brightness 255
+
+    # Enable audio and video device for bootanim
+    write /sys/kernel/boot_adsp/boot 1
+    write /sys/kernel/boot_slpi/boot 1
+    chmod 0664 /sys/devices/virtual/graphics/fb0/msm_cmd_autorefresh_en
+    chown system graphics /sys/devices/virtual/graphics/fb0/msm_cmd_autorefresh_en
+
+on post-fs-data
+    # Create perfd related dirs
+    mkdir /data/system/perfd 0770 root system
+    chmod 2770 /data/system/perfd
+
+on early-boot
+    exec - root root system -- /system/bin/init.power.sh
+
+service perfd /system/vendor/bin/perfd
+   class main
+   user root
+   group root readproc
+   socket perfd seqpacket 0666 root system
+
+service thermal-engine /vendor/bin/thermal-engine
+   class main
+   user root
+   group root system
+   socket thermal-send-client stream 0666 system system
+   socket thermal-recv-client stream 0660 system system
+   socket thermal-recv-passive-client stream 0666 system system
+

@@ -49,6 +49,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.power.sh:system/bin/init.power.sh \
+
 PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
