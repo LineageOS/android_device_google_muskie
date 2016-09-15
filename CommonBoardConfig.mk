@@ -52,4 +52,8 @@ TARGET_USES_HWC2 := true
 
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
 
+QCOM_BOARD_PLATFORMS += msmcobalt
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/google/muskie/bluetooth
+
 -include vendor/google_devices/muskie/BoardConfigVendor.mk
