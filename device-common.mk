@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
     libbt-vendor \
+    lights.$(PRODUCT_HARDWARE) \
 
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
