@@ -45,9 +45,18 @@ BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 MSM_VIDC_TARGET_LIST := msmcobalt # Get the color format from kernel headers
 MASTER_SIDE_CP_TARGET_LIST := msmcobalt # ION specific settings
 
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
+    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init.power.sh:system/bin/init.power.sh \
+
 PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
+    libbt-vendor \
+    lights.$(PRODUCT_HARDWARE) \
 
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
