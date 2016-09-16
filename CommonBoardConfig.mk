@@ -43,6 +43,8 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/muskie/kernel-headers
 
 TARGET_NO_BOOTLOADER := true
 
+TARGET_COPY_OUT_VENDOR := system/vendor
+
 # Install odex files into the other system image
 BOARD_USES_SYSTEM_OTHER_ODEX := true
 
@@ -51,5 +53,9 @@ BOARD_ROOT_EXTRA_FOLDERS := persist firmware
 TARGET_USES_HWC2 := true
 
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
+
+QCOM_BOARD_PLATFORMS += msmcobalt
+BOARD_HAVE_BLUETOOTH_QCOM := true
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/google/muskie/bluetooth
 
 -include vendor/google_devices/muskie/BoardConfigVendor.mk
