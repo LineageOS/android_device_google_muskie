@@ -23,7 +23,7 @@ PRODUCT_DEVICE := muskie
 PRODUCT_BRAND := Android
 PRODUCT_MODEL := AOSP on muskie
 PRODUCT_MANUFACTURER := Google
-PRODUCT_RESTRICT_VENDOR_FILES := true
+PRODUCT_RESTRICT_VENDOR_FILES := all
 
 $(call inherit-product, device/google/muskie/utils.mk)
 $(call inherit-product, device/google/muskie/device.mk)

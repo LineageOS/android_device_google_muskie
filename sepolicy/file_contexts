@@ -1,0 +1,7 @@
+
+# files in /system
+/system/bin/init\.power\.sh            u:object_r:init_power_exec:s0
+
+# files in /system/vendor
+/system/vendor/bin/perfd               u:object_r:perfd_exec:s0
+/system/vendor/bin/thermal-engine      u:object_r:thermal-engine_exec:s0

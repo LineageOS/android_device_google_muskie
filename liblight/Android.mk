@@ -1,5 +1,4 @@
-#
-# Copyright (C) 2016 The Android Open-Source Project
+# Copyright (C) 2016 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,9 +11,19 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
-TARGET_BOOTLOADER_BOARD_NAME := muskie
-DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
+LOCAL_PATH:= $(call my-dir)
 
-include device/google/muskie/CommonBoardConfig.mk
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := lights.c
+LOCAL_MODULE_RELATIVE_PATH := hw
+LOCAL_SHARED_LIBRARIES := libc libcutils liblog
+LOCAL_CFLAGS := $(common_flags) \
+    -DLOG_TAG=\"qdlights\" \
+    -DDEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS=$(DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS)
+LOCAL_CLANG  := true
+LOCAL_MODULE := lights.$(TARGET_DEVICE)
+LOCAL_MODULE_TAGS := optional
+
+include $(BUILD_SHARED_LIBRARY)
