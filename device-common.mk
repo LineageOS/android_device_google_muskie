@@ -15,6 +15,8 @@
 #
 
 LOCAL_PATH := device/google/muskie
+QCPATH := vendor/google_devices/muskie/proprietary
+SRC_MEDIA_HAL_DIR := hardware/qcom/media/msmcobalt
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/muskie-kernel/Image.gz-dtb
