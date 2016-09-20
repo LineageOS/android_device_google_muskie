@@ -48,6 +48,10 @@ MSM_VIDC_TARGET_LIST := msmcobalt # Get the color format from kernel headers
 MASTER_SIDE_CP_TARGET_LIST := msmcobalt # ION specific settings
 
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+    frameworks/native/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
+    frameworks/native/data/etc/android.hardware.camera.full.xml:system/etc/permissions/android.hardware.camera.full.xml\
+    frameworks/native/data/etc/android.hardware.camera.raw.xml:system/etc/permissions/android.hardware.camera.raw.xml\
     frameworks/native/data/etc/android.hardware.bluetooth.xml:system/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
 
@@ -58,7 +62,18 @@ PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
     libbt-vendor \
-    lights.$(PRODUCT_HARDWARE) \
+    lights.$(PRODUCT_HARDWARE)
+
+PRODUCT_PACKAGES += \
+    libmm-omxcore \
+    libOmxCore
+
+PRODUCT_PACKAGES += \
+    camera.msmcobalt \
+    libqomx_core \
+    libmmjpeg_interface \
+    libmmcamera_interface
+
 
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
