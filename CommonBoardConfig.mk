@@ -58,4 +58,10 @@ QCOM_BOARD_PLATFORMS += msmcobalt
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/google/muskie/bluetooth
 
+# Camera
+TARGET_USES_AOSP := true
+BOARD_QTI_CAMERA_32BIT_ONLY := true
+CAMERA_DAEMON_NOT_PRESENT := true
+TARGET_USES_ION := true
+
 -include vendor/google_devices/muskie/BoardConfigVendor.mk
