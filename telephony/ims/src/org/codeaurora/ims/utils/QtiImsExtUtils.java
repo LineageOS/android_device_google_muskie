@@ -140,6 +140,15 @@ public class QtiImsExtUtils {
     }
 
     /**
+     * This API checks to see whether IMS to CS retry is enabled or not.
+     * @param context context for getting the CS retry configuration value
+     * Returns true if enabled, or false otherwise.
+     */
+    public static boolean isCsRetryConfigEnabled(Context context) {
+        return isCarrierConfigEnabled(context, QtiCarrierConfigs.CONFIG_CS_RETRY);
+    }
+
+    /**
      * Returns true if config flag is enabled.
      */
     public static boolean isCarrierConfigEnabled(Context context, String carrierConfig) {
@@ -156,6 +165,11 @@ public class QtiImsExtUtils {
 
     public static boolean allowVideoCallsInLowBattery(Context context) {
         return isCarrierConfigEnabled(context, QtiCarrierConfigs.ALLOW_VIDEO_CALL_IN_LOW_BATTERY);
+    }
+
+    public static boolean shallHidePreviewInVtConference(Context context) {
+        return isCarrierConfigEnabled(context,
+                QtiCarrierConfigs.HIDE_PREVIEW_IN_VT_CONFERENCE);
     }
 
     private static PersistableBundle getConfigForDefaultImsPhoneId(Context context) {

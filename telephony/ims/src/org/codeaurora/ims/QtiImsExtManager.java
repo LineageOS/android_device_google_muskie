@@ -123,6 +123,15 @@ public class QtiImsExtManager {
         }
     }
 
+    public void resumePendingCall(int videoState) throws QtiImsException {
+        obtainBinder();
+        try {
+            mQtiImsExt.resumePendingCall(videoState);
+        } catch(RemoteException e) {
+            throw new QtiImsException("Remote ImsService resumePendingCall : " + e);
+        }
+    }
+
     public void sendCallTransferRequest(int phoneId, int type, String number,
             IQtiImsExtListener listener) throws QtiImsException {
         obtainBinder();
@@ -168,6 +177,16 @@ public class QtiImsExtManager {
             mQtiImsExt.registerForViceRefreshInfo(listener);
         } catch(RemoteException e) {
             throw new QtiImsException("Remote ImsService registerForViceRefreshInfo : " + e);
+        }
+    }
+
+    public void registerForParticipantStatusInfo(IQtiImsExtListener listener)
+            throws QtiImsException {
+        obtainBinder();
+        try {
+            mQtiImsExt.registerForParticipantStatusInfo(listener);
+        } catch(RemoteException e) {
+            throw new QtiImsException("Remote ImsService registerForParticipantStatusInfo : " + e);
         }
     }
 
