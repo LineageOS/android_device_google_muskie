@@ -1,0 +1,4 @@
+type adsprpcd, domain, domain_deprecated;
+type adsprpcd_exec, exec_type, file_type;
+
+init_daemon_domain(adsprpcd)

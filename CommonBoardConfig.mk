@@ -64,4 +64,10 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 CAMERA_DAEMON_NOT_PRESENT := true
 TARGET_USES_ION := true
 
+# GPS
+TARGET_NO_RPC := true
+
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 -include vendor/google_devices/muskie/BoardConfigVendor.mk

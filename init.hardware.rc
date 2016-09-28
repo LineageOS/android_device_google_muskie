@@ -69,10 +69,17 @@ on post-fs-data
     mkdir /data/system/perfd 0770 root system
     chmod 2770 /data/system/perfd
 
+    chmod 775 /persist/sensors
+    chmod 664 /persist/sensors/sensors_settings
+    chown system root /persist/sensors/sensors_settings
+
+    mkdir /data/misc/sensors
+    chmod 775 /data/misc/sensors
+
 on early-boot
     exec - root root system -- /system/bin/init.power.sh
 
-service perfd /system/vendor/bin/perfd
+service perfd /vendor/bin/perfd
    class main
    user root
    group root readproc
@@ -86,3 +93,71 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
+service ssr_setup /vendor/bin/ssr_setup
+    class main
+    user root
+    group root system
+    oneshot
+
+service ssr_diag /vendor/bin/ssr_diag
+    class late_start
+    user system
+    group system
+    disabled
+
+service per_mgr /vendor/bin/pm-service
+    class core
+    user system
+    group system
+    ioprio rt 4
+
+service per_proxy /vendor/bin/pm-proxy
+    class core
+    user system
+    group system
+    disabled
+
+on property:init.svc.per_mgr=running
+    start per_proxy
+
+on property:sys.shutdown.requested=*
+    stop per_proxy
+
+service qseecomd /vendor/bin/qseecomd
+   class core
+   user root
+   group root
+
+service time_daemon /vendor/bin/time_daemon
+   class late_start
+   user root
+   group root
+
+service ss_ramdump /vendor/bin/subsystem_ramdump
+    class main
+    user root
+    group root system
+    disabled
+
+on property:persist.sys.ssr.enable_ramdumps=1
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 1
+    mkdir /data/ramdump 760 root system
+    start ss_ramdump
+
+on property:persist.sys.ssr.enable_ramdumps=0
+    write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
+
+service sensors /vendor/bin/sensors.qcom
+    class core
+    user root
+    group root
+
+service adsprpcd /vendor/bin/adsprpcd
+   class main
+   user media
+   group media
+
+service irsc_util /vendor/bin/irsc_util "/etc/sec_config"
+    class core
+    user root
+    oneshot
