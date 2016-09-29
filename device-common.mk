@@ -37,6 +37,14 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.hardware.usb.rc:root/init.$(PRODUCT_HARDWARE).usb.rc \
     $(LOCAL_PATH)/ueventd.hardware.rc:root/ueventd.$(PRODUCT_HARDWARE).rc \
 
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+  PRODUCT_COPY_FILES += \
+      $(LOCAL_PATH)/init.hardware.diag.rc.userdebug:root/init.$(PRODUCT_HARDWARE).diag.rc
+else
+  PRODUCT_COPY_FILES += \
+      $(LOCAL_PATH)/init.hardware.diag.rc.user:root/init.$(PRODUCT_HARDWARE).diag.rc
+endif
+
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2147483648
