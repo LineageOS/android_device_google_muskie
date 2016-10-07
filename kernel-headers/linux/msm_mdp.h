@@ -1137,6 +1137,11 @@ struct mdss_ad_cfg {
   uint32_t bl_ctrl_mode;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+struct mdss_ad_bl_cfg {
+  uint32_t bl_min_delta;
+  uint32_t bl_low_limit;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+};
 struct mdss_ad_init_cfg {
   uint32_t ops;
   union {
@@ -1186,236 +1191,240 @@ enum {
   mdp_op_max,
   mdp_op_pa_dither_cfg,
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+  mdp_op_ad_bl_cfg,
   mdp_op_pp_max = 255,
 };
 #define mdp_op_pa_dither_cfg mdp_op_pa_dither_cfg
-#define mdp_op_pp_max mdp_op_pp_max
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#define mdp_op_pp_max mdp_op_pp_max
+#define mdp_op_ad_bl_cfg mdp_op_ad_bl_cfg
 enum {
   WB_FORMAT_NV12,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   WB_FORMAT_RGB_565,
   WB_FORMAT_RGB_888,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   WB_FORMAT_xRGB_8888,
   WB_FORMAT_ARGB_8888,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   WB_FORMAT_BGRA_8888,
   WB_FORMAT_BGRX_8888,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   WB_FORMAT_ARGB_8888_INPUT_ALPHA
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct msmfb_mdp_pp {
   uint32_t op;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   union {
     struct mdp_pcc_cfg_data pcc_cfg_data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_csc_cfg_data csc_cfg_data;
     struct mdp_lut_cfg_data lut_cfg_data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_qseed_cfg_data qseed_cfg_data;
     struct mdp_bl_scale_data bl_scale_data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_pa_cfg_data pa_cfg_data;
     struct mdp_pa_v2_cfg_data pa_v2_cfg_data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_dither_cfg_data dither_cfg_data;
     struct mdp_gamut_cfg_data gamut_cfg_data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_calib_config_data calib_cfg;
     struct mdss_ad_init_cfg ad_init_cfg;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdss_calib_cfg mdss_calib_cfg;
     struct mdss_ad_input ad_input;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_calib_config_buffer calib_buffer;
     struct mdp_calib_dcm_state calib_dcm;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+    struct mdss_ad_bl_cfg ad_bl_cfg;
   } data;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #define FB_METADATA_VIDEO_INFO_CODE_SUPPORT 1
 enum {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_none,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_base_blend,
   metadata_op_frame_rate,
   metadata_op_vic,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_wb_format,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_wb_secure,
   metadata_op_get_caps,
   metadata_op_crc,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_get_ion_fd,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   metadata_op_max
 };
 struct mdp_blend_cfg {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t is_premultiplied;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_mixer_cfg {
   uint32_t writeback_format;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t alpha;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdss_hw_caps {
   uint32_t mdp_rev;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint8_t rgb_pipes;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint8_t vig_pipes;
   uint8_t dma_pipes;
   uint8_t max_smp_cnt;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint8_t smp_per_pipe;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t features;
 };
 struct msmfb_metadata {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t op;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t flags;
   union {
     struct mdp_misr misr_request;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_blend_cfg blend_cfg;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdp_mixer_cfg mixer_cfg;
     uint32_t panel_frame_rate;
     uint32_t video_info_code;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct mdss_hw_caps caps;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     uint8_t secure_en;
     int fbmem_ionfd;
   } data;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MDP_MAX_FENCE_FD 32
 #define MDP_BUF_SYNC_FLAG_WAIT 1
 #define MDP_BUF_SYNC_FLAG_RETIRE_FENCE 0x10
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_buf_sync {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t flags;
   uint32_t acq_fen_fd_cnt;
   uint32_t session_id;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   int * acq_fen_fd;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   int * rel_fen_fd;
   int * retire_fen_fd;
 };
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_async_blit_req_list {
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   struct mdp_buf_sync sync;
   uint32_t count;
   struct mdp_blit_req req[];
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MDP_DISPLAY_COMMIT_OVERLAY 1
 struct mdp_display_commit {
   uint32_t flags;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t wait_for_finish;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   struct fb_var_screeninfo var;
   struct mdp_rect l_roi;
   struct mdp_rect r_roi;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_overlay_list {
   uint32_t num_overlays;
   struct mdp_overlay * * overlay_list;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t flags;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t processed_overlays;
 };
 struct mdp_page_protection {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint32_t page_protection;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 struct mdp_mixer_info {
   int pndx;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   int pnum;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   int ptype;
   int mixer_num;
   int z_order;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define MAX_PIPE_PER_MIXER 7
 struct msmfb_mixer_info_req {
   int mixer_num;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   int cnt;
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   struct mdp_mixer_info info[MAX_PIPE_PER_MIXER];
 };
 enum {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   DISPLAY_SUBSYSTEM_ID,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   ROTATOR_SUBSYSTEM_ID,
 };
 enum {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   MDP_IOMMU_DOMAIN_CP,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   MDP_IOMMU_DOMAIN_NS,
 };
 enum {
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   MDP_WRITEBACK_MIRROR_OFF,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   MDP_WRITEBACK_MIRROR_ON,
   MDP_WRITEBACK_MIRROR_PAUSE,
   MDP_WRITEBACK_MIRROR_RESUME,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum mdp_color_space {
   MDP_CSC_ITU_R_601,
   MDP_CSC_ITU_R_601_FR,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   MDP_CSC_ITU_R_709,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 enum {
   mdp_igc_v1_7 = 1,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_igc_vmax,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_hist_lut_v1_7,
   mdp_hist_lut_vmax,
   mdp_pgc_v1_7,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_pgc_vmax,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_dither_v1_7,
   mdp_dither_vmax,
   mdp_gamut_v1_7,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_gamut_vmax,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_pa_v1_7,
   mdp_pa_vmax,
   mdp_pcc_v1_7,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_pcc_vmax,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_pp_legacy,
   mdp_dither_pa_v1_7,
   mdp_igc_v3,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   mdp_pp_unknown = 255
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
 #define mdp_dither_pa_v1_7 mdp_dither_pa_v1_7
 #define mdp_pp_unknown mdp_pp_unknown
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define mdp_igc_v3 mdp_igc_v3
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 enum {
   IGC = 1,
   PCC,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   GC,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   PA,
   GAMUT,
   DITHER,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   QSEED,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   HIST_LUT,
   HIST,
   PP_FEATURE_MAX,
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   PA_DITHER,
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   PP_MAX_FEATURES = 25,
 };
 #define PA_DITHER PA_DITHER
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #define PP_MAX_FEATURES PP_MAX_FEATURES
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 struct mdp_pp_feature_version {
   uint32_t pp_feature;
   uint32_t version_info;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 };
+/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
 #endif
 
