@@ -104,6 +104,12 @@ private:
      report to loc eng */
   void reportSv (const qmiLocEventGnssSvInfoIndMsgT_v02 *gnss_report_ptr);
 
+  void reportSvMeasurement (
+  const qmiLocEventGnssSvMeasInfoIndMsgT_v02 *gnss_raw_measurement_ptr);
+
+  void  reportSvPolynomial (
+  const qmiLocEventGnssSvPolyIndMsgT_v02 *gnss_sv_poly_ptr);
+
   /* convert engine state report to loc eng format and send the converted
      report to loc eng */
   void reportEngineState (
@@ -219,7 +225,6 @@ public:
                                int gyroSamplesPerBatch, int gyroBatchesPerSec,
                                int accelSamplesPerBatchHigh, int accelBatchesPerSecHigh,
                                int gyroSamplesPerBatchHigh, int gyroBatchesPerSecHigh, int algorithmConfig);
-  virtual enum loc_api_adapter_err setExtPowerConfig(int isBatteryCharging);
   virtual enum loc_api_adapter_err setAGLONASSProtocol(unsigned long aGlonassProtocol);
   virtual enum loc_api_adapter_err setLPPeProtocol(unsigned long lppeCP, unsigned long lppeUP);
   virtual enum loc_api_adapter_err
@@ -240,15 +245,11 @@ public:
     -1 on failure
   */
   virtual int getGpsLock(void);
+  virtual int setSvMeasurementConstellation(const qmiLocGNSSConstellEnumT_v02 svConstellation);
   virtual enum loc_api_adapter_err setXtraVersionCheck(enum xtra_version_check check);
   virtual void installAGpsCert(const DerEncodedCertificate* pData,
                                size_t length,
                                uint32_t slotBitMask);
-  /*
-    Update Registration Mask
-  */
-  virtual int updateRegistrationMask(LOC_API_ADAPTER_EVENT_MASK_T event,
-                                     loc_registration_mask_status isEnabled);
   /*
     Set Gnss Constellation Config
   */

@@ -1,4 +1,4 @@
-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -145,12 +145,31 @@ interface IQtiImsExt {
     int getImsPhoneId();
 
    /**
+     * resumePendingCall
+     * This API shall continue to place DIAL request with videoState as either
+     * Video or Voice based on user confirmation on low battery MO Video call
+     *
+     * @param videoState indicates either Video or Voice type
+     * @return void
+     */
+    oneway void resumePendingCall(int videoState);
+
+   /**
      * Register for VICE dialog
      *
-     * @param listener, provided if caller needs to be notified for get result.
+     * @param listener, to get notified for VICE refresh information.
      * @return void
      *
      */
     oneway void registerForViceRefreshInfo(IQtiImsExtListener listener);
+
+   /**
+     * Register for Pariticipant status information
+     *
+     * @param listener, to get notified for participant status information.
+     * @return void
+     *
+     */
+    oneway void registerForParticipantStatusInfo(IQtiImsExtListener listener);
 
 }

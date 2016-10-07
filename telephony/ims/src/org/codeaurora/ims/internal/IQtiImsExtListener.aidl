@@ -1,4 +1,4 @@
-/* Copyright (c) 2015, The Linux Foundation. All rights reserved.
+/* Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -137,4 +137,20 @@ oneway interface IQtiImsExtListener {
      * @return void.
      */
     void notifyRefreshViceInfo(in QtiViceInfo viceInfo);
+
+    /**
+     * Notifies client when Participant status information is received
+     *
+     * @param  operation - operation add or remove participant
+     * @param  sipStatus - sip code indicating status of operation
+     *                     180 - Ringing, 603 - remote user rejected the call
+     *                     200 - Remote user accepted the call, if operation is add
+     *                           Participant removed successfully if operation is remove
+     * @param  participantUri - Participant URI
+     * @param  isEct -  Explicit call transfer true or false
+     *
+     * @return void.
+     */
+    void notifyParticipantStatusInfo(int operation, int sipStatus,
+            String participantUri, boolean isEct);
 }
