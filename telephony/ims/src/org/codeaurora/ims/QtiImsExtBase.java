@@ -72,6 +72,11 @@ public abstract class QtiImsExtBase {
         }
 
         @Override
+        public void resumePendingCall(int videoState) {
+            onResumePendingCall(videoState);
+        }
+
+        @Override
         public void sendCallTransferRequest(int phoneId, int type, String number,
                 IQtiImsExtListener listener) {
             onSendCallTransferRequest(phoneId, type, number, listener);
@@ -96,6 +101,12 @@ public abstract class QtiImsExtBase {
         public void registerForViceRefreshInfo(IQtiImsExtListener listener) {
             onRegisterForViceRefreshInfo(listener);
         }
+
+        @Override
+        public void registerForParticipantStatusInfo(IQtiImsExtListener listener) {
+            onRegisterForParticipantStatusInfo(listener);
+        }
+
     };
 
     private QtiImsExtBinder mQtiImsExtBinder;
@@ -126,6 +137,9 @@ public abstract class QtiImsExtBase {
             IQtiImsExtListener listener) {
         // no-op
     }
+    protected void onResumePendingCall(int videoState) {
+        // no-op
+    }
     protected void onSendCallTransferRequest(int phoneId, int type, String number,
             IQtiImsExtListener listener) {
         // no-op
@@ -140,6 +154,9 @@ public abstract class QtiImsExtBase {
         return QtiCallConstants.INVALID_PHONE_ID;
     }
     protected void onRegisterForViceRefreshInfo(IQtiImsExtListener listener) {
+        // no-op
+    }
+    protected void onRegisterForParticipantStatusInfo(IQtiImsExtListener listener) {
         // no-op
     }
 }
