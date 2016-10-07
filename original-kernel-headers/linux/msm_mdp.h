@@ -1172,6 +1172,11 @@ struct mdss_ad_cfg {
 	uint32_t bl_ctrl_mode;
 };
 
+struct mdss_ad_bl_cfg {
+	uint32_t bl_min_delta;
+	uint32_t bl_low_limit;
+};
+
 /* ops uses standard MDP_PP_* flags */
 struct mdss_ad_init_cfg {
 	uint32_t ops;
@@ -1216,10 +1221,13 @@ enum {
 	mdp_op_calib_dcm_state,
 	mdp_op_max,
 	mdp_op_pa_dither_cfg,
+	mdp_op_ad_bl_cfg,
 	mdp_op_pp_max = 255,
 };
 #define mdp_op_pa_dither_cfg mdp_op_pa_dither_cfg
 #define mdp_op_pp_max mdp_op_pp_max
+
+#define mdp_op_ad_bl_cfg mdp_op_ad_bl_cfg
 
 enum {
 	WB_FORMAT_NV12,
@@ -1250,6 +1258,7 @@ struct msmfb_mdp_pp {
 		struct mdss_ad_input ad_input;
 		struct mdp_calib_config_buffer calib_buffer;
 		struct mdp_calib_dcm_state calib_dcm;
+		struct mdss_ad_bl_cfg ad_bl_cfg;
 	} data;
 };
 
