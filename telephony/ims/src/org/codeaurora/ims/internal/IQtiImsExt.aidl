@@ -53,7 +53,7 @@ interface IQtiImsExt {
      *        SERVICE_CLASS, as defined in
      *        <code>com.android.internal.telephony.CommandsInterface.</code>
      * @param dialingNumber is the target phone number to forward calls to
-     * @param QtiImsExtListener listener to request
+     * @param listener an IQtiImsExtListener instance to indicate the response
      * @return void
      */
     oneway void setCallForwardUncondTimer(int startHour, int startMinute, int endHour,
@@ -70,7 +70,7 @@ interface IQtiImsExt {
      * @param serviceClass is service class, that is used to get CFT
      *        SERVICE_CLASS, as defined in
      *        <code>com.android.internal.telephony.CommandsInterface.</code>
-     * @param QtiImsExtListener listener to request
+     * @param listener an IQtiImsExtListener instance to indicate the response
      * @return void
      */
     oneway void getCallForwardUncondTimer(int reason, int serviceClass,
@@ -113,10 +113,10 @@ interface IQtiImsExt {
      * Transfer an established call to given number or call id
      *
      * @param phoneId indicates the phone instance which triggered the request
-     * @param type is one of the values QTI_IMS_TRANSFER_TYPE_*, as defined in
-     *        <code>org.codeaurora.ims.qtiims.QtiImsInterfaceUtils.</code>
+     * @param type is one of the values QTI_IMS_*_TRANSFER, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
      * @param number indicates the target number to transfer
-     * @param listener an IQtiImsInterfaceListener instance to indicate the response
+     * @param listener an IQtiImsExtListener instance to indicate the response
      * @return void
      */
     oneway void sendCallTransferRequest(int phoneId, int type, String number,
@@ -172,4 +172,49 @@ interface IQtiImsExt {
      */
     oneway void registerForParticipantStatusInfo(IQtiImsExtListener listener);
 
+   /**
+     * updateVoltePreference
+     * Updates the user's VoLTE preference to lower layers
+     *
+     * @param phoneId indicates the phone instance which triggered the request
+     * @param preference is one of the values QTI_IMS_VOLTE_PREF_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
+     * @param listener an IQtiImsExtListener instance to indicate the response
+     * @return void
+     */
+    oneway void updateVoltePreference(int phoneId, int preference, IQtiImsExtListener listener);
+
+   /**
+     * queryVoltePreference
+     * Retrieves the user's VoLTE preference from lower layers
+     *
+     * @param phoneId indicates the phone instance which triggered the request
+     * @param listener an IQtiImsExtListener instance to indicate the response
+     * @return void
+     */
+    oneway void queryVoltePreference(int phoneId, IQtiImsExtListener listener);
+
+   /**
+     * getHandoverConfig
+     * Get IMS Handover Enabled status
+     *
+     * @param listener, provided if caller needs to be notified for get result.
+     * @return void
+     *
+     * @throws RemoteException if calling the IMS service results in an error.
+     */
+    oneway void getHandoverConfig(IQtiImsExtListener listener);
+
+   /**
+     * setHandoverConfig
+     * Set IMS Handover Enabled status
+     *
+     * @param hoConfig is one of the values QTI_IMS_HO_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils</code>
+     * @param listener, provided if caller needs to be notified for set result.
+     * @return void
+     *
+     * @throws RemoteException if calling the IMS service results in an error.
+     */
+    oneway void setHandoverConfig(int hoConfig, IQtiImsExtListener listener);
 }

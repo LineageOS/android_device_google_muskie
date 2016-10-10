@@ -75,6 +75,9 @@ public class QtiCallConstants {
     /* Call fail error code for handover not feasible */
     public static final int CALL_FAIL_EXTRA_CODE_LTE_3G_HA_FAILED = 149;
 
+    /* Call fail error code for validate Video call number */
+    public static final int CALL_FAIL_EXTRA_CODE_LOCAL_VALIDATE_NUMBER = 150;
+
     /* Call fail error code for Retry CS call*/
     public static final int CALL_FAIL_EXTRA_CODE_CALL_CS_RETRY_REQUIRED =
             ImsReasonInfo.CODE_LOCAL_CALL_CS_RETRY_REQUIRED;
