@@ -102,6 +102,10 @@ PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
+# Vibrator HAL
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sec_config:system/etc/sec_config
 
