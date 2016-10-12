@@ -162,6 +162,24 @@ public class QtiImsExtUtils {
         return SystemProperties.getBoolean("persist.radio.ims_call_transfer", false);
     }
 
+   /**
+     * This API checks to see whether we are going to use ui extension for video call or not.
+     * @param context context for getting video call ui ext configuration value
+     * Returns true if enabled, or false otherwise.
+     */
+    public static boolean useExt(Context context) {
+        return isCarrierConfigEnabled(context, QtiCarrierConfigs.USE_VIDEO_UI_EXTENSIONS);
+    }
+
+   /**
+     * This API checks to see whether custom video ui is enabled or not.
+     * @param context context for getting custom video ui configuration value
+     * Returns true if enabled, or false otherwise.
+     */
+    public static boolean useCustomVideoUi(Context context) {
+        return isCarrierConfigEnabled(context, QtiCarrierConfigs.USE_CUSTOM_VIDEO_UI);
+    }
+
     /**
      * This API checks to see whether IMS to CS retry is enabled or not.
      * @param context context for getting the CS retry configuration value
