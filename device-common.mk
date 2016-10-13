@@ -79,8 +79,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
-    libbt-vendor \
-    lights.$(PRODUCT_HARDWARE)
+    libbt-vendor
+
+# Light HAL
+PRODUCT_PACKAGES += \
+    lights.$(PRODUCT_HARDWARE) \
+    android.hardware.light@2.0-impl
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
