@@ -92,7 +92,7 @@ oneway interface IQtiImsExtListener {
     /**
      * Notifies client the result of call deflect request
      *
-     * @param <result> is one of the values QTIIMS_REQUEST_*, as defined in
+     * @param <result> is one of the values QTI_IMS_REQUEST_*, as defined in
      *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
      * @return void.
      */
@@ -102,7 +102,7 @@ oneway interface IQtiImsExtListener {
      * Notifies client the result of call transfer request
      *
      * @param <result> is one of the values QTI_IMS_REQUEST_*, as defined in
-     *        <code>org.codeaurora.ims.qtiims.QtiImsInterfaceUtils.</code>
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
      * @return void.
      */
     void receiveCallTransferResponse(int result);
@@ -153,4 +153,47 @@ oneway interface IQtiImsExtListener {
      */
     void notifyParticipantStatusInfo(int operation, int sipStatus,
             String participantUri, boolean isEct);
+
+    /**
+     * Notifies client the result of updateVoltePreference request
+     *
+     * @param <result> is one of the values QTI_IMS_REQUEST_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
+     * @return void.
+     */
+    void onVoltePreferenceUpdated(int result);
+
+    /**
+     * Notifies client the result of queryVoltePreference request
+     *
+     * @param <result> is one of the values QTI_IMS_REQUEST_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
+     * @param <mode> is valid only when <result> is QTI_IMS_REQUEST_SUCCESS and
+     *        is one of the values QTI_IMS_VOLTE_PREF_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils.</code>
+     * @return void.
+     */
+    void onVoltePreferenceQueried(int result, int mode);
+
+    /**
+     * Notifies client the value of the set handover config result.
+     *
+     * @param <status> is one of the values QTI_IMS_REQUEST_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils</code>
+     * @return void.
+     */
+    void onSetHandoverConfig(int status);
+
+   /**
+     * Notifies client the value of the get operation result on get handover config item.
+     *
+     * @param <status> is one of the values QTI_IMS_REQUEST_*, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils</code>
+     * @param hoConfig is valid when status is QTI_IMS_REQUEST_SUCCESS and it can have
+     *        one of the values QTI_IMS_HO_* excluding QTI_IMS_HO_INVALID, as defined in
+     *        <code>org.codeaurora.ims.utils.QtiImsExtUtils</code>
+     * @return void
+     */
+   void onGetHandoverConfig(int status, int hoConfig);
+
 }
