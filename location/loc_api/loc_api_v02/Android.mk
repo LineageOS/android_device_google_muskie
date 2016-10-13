@@ -17,6 +17,7 @@ endif
 LOCAL_SHARED_LIBRARIES := \
     libutils \
     libcutils \
+    liblog \
     libqmi_cci \
     libqmi_common_so \
     libloc_core \
