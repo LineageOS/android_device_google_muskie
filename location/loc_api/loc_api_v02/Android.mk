@@ -18,6 +18,7 @@ LOCAL_SHARED_LIBRARIES := \
     libutils \
     liblog \
     libcutils \
+    liblog \
     libqmi_cci \
     libqmi_common_so \
     libloc_core \
