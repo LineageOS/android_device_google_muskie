@@ -56,4 +56,9 @@ public class QtiCarrierConfigs {
        false - hard disabled.
        true - then depends on user preference */
     public static final String CONFIG_CS_RETRY = "config_carrier_cs_retry_available";
+
+    /* Controls modify call capabilities
+       FALSE - default capabilities will be retained
+       TRUE - remove modify call capabilities which will hide modify call button*/
+    public static final String REMOVE_MODIFY_CALL_CAPABILITY = "remove_modify_call_capability";
 }

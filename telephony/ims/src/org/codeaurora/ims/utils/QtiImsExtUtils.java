@@ -62,6 +62,12 @@ public class QtiImsExtUtils {
     /* Default error value */
     public static final int QTI_IMS_REQUEST_ERROR = 1;
 
+    /* name for carrier property */
+    public static final String PROPERTY_RADIO_ATEL_CARRIER = "persist.radio.atel.carrier";
+
+    /* Carrier one default mcc mnc */
+    public static final String CARRIER_ONE_DEFAULT_MCC_MNC = "405854";
+
     /**
      * Definitions for the call transfer type. For easier implementation,
      * the transfer type is defined as a bit mask value.
@@ -93,9 +99,26 @@ public class QtiImsExtUtils {
      */
     public static final String EXTRA_SSAC = "Ssac";
 
+    /**
+     * Definitions for the volte preference values.
+     */
+    //Value representing volte preference is OFF
+    public static final int QTI_IMS_VOLTE_PREF_OFF = 0;
+    //Value representing volte preference is ON
+    public static final int QTI_IMS_VOLTE_PREF_ON = 1;
+    //Value representing volte preference is NOT known
+    public static final int QTI_IMS_VOLTE_PREF_UNKNOWN = 2;
+
 
     /* Incoming conference call extra key */
     public static final String QTI_IMS_INCOMING_CONF_EXTRA_KEY = "incomingConference";
+
+    /* Handover config params */
+    public static final int QTI_IMS_HO_INVALID = 0x00;
+    public static final int QTI_IMS_HO_ENABLE_ALL = 0x01;
+    public static final int QTI_IMS_HO_DISABLE_ALL = 0x02;
+    public static final int QTI_IMS_HO_ENABLED_WLAN_TO_WWAN_ONLY = 0x03;
+    public static final int QTI_IMS_HO_ENABLED_WWAN_TO_WLAN_ONLY = 0x04;
 
     /**
      * Private constructor for QtiImsExtUtils as we don't want to instantiate this class
@@ -149,6 +172,14 @@ public class QtiImsExtUtils {
     }
 
     /**
+     * Check is carrier one supported or not
+     */
+    public static boolean isCarrierOneSupported() {
+        return CARRIER_ONE_DEFAULT_MCC_MNC.equals(SystemProperties.get(
+                PROPERTY_RADIO_ATEL_CARRIER));
+    }
+
+    /**
      * Returns true if config flag is enabled.
      */
     public static boolean isCarrierConfigEnabled(Context context, String carrierConfig) {
@@ -170,6 +201,10 @@ public class QtiImsExtUtils {
     public static boolean shallHidePreviewInVtConference(Context context) {
         return isCarrierConfigEnabled(context,
                 QtiCarrierConfigs.HIDE_PREVIEW_IN_VT_CONFERENCE);
+    }
+
+    public static boolean shallRemoveModifyCallCapability(Context context) {
+        return isCarrierConfigEnabled(context, QtiCarrierConfigs.REMOVE_MODIFY_CALL_CAPABILITY);
     }
 
     private static PersistableBundle getConfigForDefaultImsPhoneId(Context context) {
