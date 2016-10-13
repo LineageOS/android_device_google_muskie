@@ -52,6 +52,12 @@ public class QtiCarrierConfigs {
     public static final String HIDE_PREVIEW_IN_VT_CONFERENCE =
             "config_hide_preview_in_vt_confcall";
 
+    /* Flag determining whether UI extensions for video calls should be used or not */
+    public static final String USE_VIDEO_UI_EXTENSIONS = "video_call_use_ext";
+
+    /* Flag determining whether customized video ui support is required or not */
+    public static final String USE_CUSTOM_VIDEO_UI = "use_custom_video_ui";
+
     /* Flag specifying whether IMS to CS retry should be available for carrier
        false - hard disabled.
        true - then depends on user preference */
