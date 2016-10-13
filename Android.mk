@@ -15,5 +15,5 @@
 #
 
 ifneq ($(filter muskie, $(TARGET_DEVICE)),)
-  include $(call all-subdir-makefiles)
+  include $(call first-makefiles-under, $(call my-dir))
 endif
