@@ -79,6 +79,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
+    android.hardware.graphics.composer@2.1-impl \
     libbt-vendor
 
 # Light HAL
