@@ -15,7 +15,7 @@
 #
 
 # the DIAG device node is not world writable/readable.
-/dev/diag                 0660   system     qcom_diag
+/dev/diag                 0660   system     diag
 
 /dev/kgsl-3d0             0666   system     system
 /dev/ion                  0664   system     system
