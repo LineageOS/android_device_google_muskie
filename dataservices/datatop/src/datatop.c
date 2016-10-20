@@ -93,7 +93,7 @@ int dtop_poll_periodically(struct dtop_linked_list *dpg_list, FILE *fw)
 	struct timeval tv, timeout;
 	fd_set rfds;
 	time_t curtime, endtime;
-	int inp, quit;
+	int inp, quit = 0;
 	struct dtop_linked_list *curr_ptr = dpg_list;
 	struct dtop_data_point_gatherer *dpset;
 	struct timeval ftime, itime, polltime;
