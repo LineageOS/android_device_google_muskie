@@ -67,4 +67,11 @@ public class QtiCarrierConfigs {
        FALSE - default capabilities will be retained
        TRUE - remove modify call capabilities which will hide modify call button*/
     public static final String REMOVE_MODIFY_CALL_CAPABILITY = "remove_modify_call_capability";
+
+    /* Config to show/hide Video quality toast */
+    public static final String SHOW_VIDEO_QUALITY_TOAST = "show_video_quality_toast";
+    /* Config to show/hide call session event toast like player start/stop */
+    public static final String SHOW_CALL_SESSION_EVENT_TOAST = "show_call_session_event_toast";
+    /* Config to show/hide data usage toast */
+    public static final String SHOW_DATA_USAGE_TOAST = "show_data_usage_toast";
 }
