@@ -230,6 +230,11 @@ public class QtiImsExtUtils {
     }
 
     private static PersistableBundle getConfigForPhoneId(Context context, int phoneId) {
+        if (context == null) {
+            Log.e(LOG_TAG, "getConfigForPhoneId context is null");
+            return null;
+        }
+
         CarrierConfigManager configManager = (CarrierConfigManager) context.getSystemService(
                 Context.CARRIER_CONFIG_SERVICE);
         if (configManager == null) {
