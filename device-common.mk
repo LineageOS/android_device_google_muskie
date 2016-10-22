@@ -101,6 +101,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
     rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 
+# WLAN driver configuration files
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/wifi_concurrency_cfg.txt:system/etc/wifi/wifi_concurrency_cfg.txt \
+    $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+
 PRODUCT_PACKAGES += \
     hwcomposer.msmcobalt \
     gralloc.msmcobalt \
@@ -138,6 +145,18 @@ PRODUCT_PACKAGES += \
     libloc_api_v02 \
     libloc_ds_api \
     libgnsspps
+
+HOSTAPD := hostapd
+HOSTAPD += hostapd_cli
+PRODUCT_PACKAGES += $(HOSTAPD)
+
+WPA := wpa_supplicant.conf
+WPA += wpa_supplicant_wcn.conf
+WPA += wpa_supplicant
+PRODUCT_PACKAGES += $(WPA)
+
+LIB_NL := libnl_2
+PRODUCT_PACKAGES += $(LIB_NL)
 
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)

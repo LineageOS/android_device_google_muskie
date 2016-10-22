@@ -56,6 +56,8 @@
 /system/vendor/bin/irsc_util           u:object_r:irsc_util_exec:s0
 /system/vendor/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
 /system/vendor/bin/tftp_server         u:object_r:rfs_access_exec:s0
+/system/vendor/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
+/system/vendor/bin/cnss_diag           u:object_r:wcnss_service_exec:s0
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
