@@ -180,6 +180,9 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
+    # Create NETMGR daemon socket area
+    mkdir /dev/socket/netmgr 0750 radio radio
+
     setprop wifi.interface wlan0
 
     # Define TCP buffer sizes for various networks
@@ -350,3 +353,14 @@ service cnss-daemon /vendor/bin/cnss-daemon -n -l
    class late_start
    user system
    group system inet net_admin wifi
+
+service netmgrd /vendor/bin/netmgrd
+    class main
+    user root
+    group root wifi wakelock radio inet
+
+service port-bridge /vendor/bin/port-bridge
+    class main
+    user radio
+    group radio system inet
+    oneshot
