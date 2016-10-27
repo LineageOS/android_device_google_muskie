@@ -62,6 +62,9 @@ on post-fs
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
 
+    # load IPA FWs
+    write /dev/ipa 1
+
     chmod 0664 /sys/devices/virtual/graphics/fb0/idle_time
     chown system graphics /sys/devices/virtual/graphics/fb0/idle_time
 

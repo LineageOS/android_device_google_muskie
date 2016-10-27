@@ -33,6 +33,7 @@ BOARD_KERNEL_CMDLINE += androidboot.hardware=$(TARGET_BOOTLOADER_BOARD_NAME) and
 BOARD_KERNEL_CMDLINE += user_debug=31 msm_rtb.filter=0x37 ehci-hcd.park=3
 BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 sched_enable_hmp=1 sched_enable_power_aware=1
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive service_locator.enable=1
+BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/etc/firmware
 
 BOARD_KERNEL_BASE        := 0x00000000
 BOARD_KERNEL_PAGESIZE    := 4096
