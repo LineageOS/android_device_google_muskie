@@ -44,6 +44,8 @@ TARGET_BOARD_KERNEL_HEADERS := device/google/muskie/kernel-headers
 
 TARGET_NO_BOOTLOADER := true
 
+ENABLE_CPUSETS := true
+
 TARGET_COPY_OUT_VENDOR := system/vendor
 
 # Install odex files into the other system image
