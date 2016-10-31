@@ -45,34 +45,10 @@ write /proc/sys/kernel/sched_spill_nr_run 5
 write /proc/sys/kernel/sched_restrict_cluster_spill 1
 
 # configure governor settings for little cluster
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "interactive"
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/above_hispeed_delay 19000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/go_hispeed_load 90
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/hispeed_freq 1478400
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "83 1728000:90 1804800:95"
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
-write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 1
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "sched"
 
 # configure governor settings for big cluster
-write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "interactive"
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 19000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 1536000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "83 1939200:90 2016000:95"
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 19000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/max_freq_hysteresis 79000
-write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 300000
-write /sys/devices/system/cpu/cpu4/cpufreq/interactive/ignore_hispeed_on_notif 1
+write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "sched"
 
 # re-enable thermal hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
