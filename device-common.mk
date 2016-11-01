@@ -101,6 +101,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
     rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
 
+PRODUCT_PROPERTY_OVERRIDES += \
+  ro.vendor.extension_library=libqti-perfd-client.so
+
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -116,7 +119,12 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
-    libOmxCore
+    libOmxCore \
+    libstagefrighthw \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libc2dcolorconvert
 
 PRODUCT_PACKAGES += \
     camera.msmcobalt \
