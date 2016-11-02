@@ -62,6 +62,8 @@
 /system/vendor/bin/netmgrd             u:object_r:netmgrd_exec:s0
 /system/vendor/bin/port-bridge         u:object_r:port-bridge_exec:s0
 /system/vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
+/system/vendor/bin/loc_launcher        u:object_r:location_exec:s0
+/system/vendor/bin/lowi-server         u:object_r:location_exec:s0
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
