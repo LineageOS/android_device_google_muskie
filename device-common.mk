@@ -176,7 +176,11 @@ LIB_NL := libnl_2
 PRODUCT_PACKAGES += $(LIB_NL)
 
 PRODUCT_PACKAGES += \
-    audio.primary.msmcobalt
+    audio.primary.msmcobalt \
+    audio.a2dp.default \
+    audio.usb.default \
+    audio.r_submix.default \
+    libaudio-resampler
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
