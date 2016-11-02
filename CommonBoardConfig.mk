@@ -53,8 +53,6 @@ BOARD_USES_SYSTEM_OTHER_ODEX := true
 
 BOARD_ROOT_EXTRA_FOLDERS := persist firmware
 
-TARGET_USES_HWC2 := true
-
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
 
 BOARD_SECCOMP_POLICY = device/google/muskie/seccomp
