@@ -207,6 +207,13 @@ on boot
     # Increased technology maximums should be reflected here.
     write /proc/sys/net/core/rmem_max  8388608
 
+    # Bluetooth
+    chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
+    chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chown bluetooth net_bt /sys/class/rfkill/rfkill0/device/extldo
+    chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
+
 service init-radio-sh /system/bin/init.radio.sh
     class late_start
     user radio
@@ -378,3 +385,15 @@ service port-bridge /vendor/bin/port-bridge
     user radio
     group radio system inet
     oneshot
+
+on property:wc_transport.start_hci=true
+    start hci_filter
+
+on property:wc_transport.start_hci=false
+    stop hci_filter
+
+service hci_filter /vendor/bin/wcnss_filter
+    class late_start
+    user bluetooth
+    group bluetooth diag
+    disabled

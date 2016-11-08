@@ -60,6 +60,7 @@
 /system/vendor/bin/cnss_diag           u:object_r:wcnss_service_exec:s0
 /system/vendor/bin/netmgrd             u:object_r:netmgrd_exec:s0
 /system/vendor/bin/port-bridge         u:object_r:port-bridge_exec:s0
+/system/vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
