@@ -182,6 +182,9 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     libaudio-resampler
 
+PRODUCT_PACKAGES += \
+    android.hardware.audio.effect@2.0-impl
+
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
     tinyplay \
