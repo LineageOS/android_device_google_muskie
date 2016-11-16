@@ -212,5 +212,8 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
     $(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/lowi.conf:system/etc/lowi.conf
+
 # setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
