@@ -104,6 +104,7 @@ struct msm_sde_rotator_fence {
 #define VIDIOC_G_SDE_ROTATOR_FENCE _IOWR('V', BASE_VIDIOC_PRIVATE + 10, struct msm_sde_rotator_fence)
 #define VIDIOC_S_SDE_ROTATOR_FENCE _IOWR('V', BASE_VIDIOC_PRIVATE + 11, struct msm_sde_rotator_fence)
 #define V4L2_CID_SDE_ROTATOR_SECURE (V4L2_CID_USER_BASE + 0x1000)
-#endif
+#define V4L2_CID_SDE_ROTATOR_SECURE_CAMERA (V4L2_CID_USER_BASE + 0x2000)
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+#endif
 
