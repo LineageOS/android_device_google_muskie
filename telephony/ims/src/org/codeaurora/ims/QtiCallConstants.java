@@ -69,6 +69,9 @@ public class QtiCallConstants {
     /* Call encryption status extra key. The value will be a boolean. */
     public static final String CALL_ENCRYPTION_EXTRA_KEY = "CallEncryption";
 
+    /* Call History Info extra key. The value will be a ArrayList of Strings. */
+    public static final String EXTRAS_CALL_HISTORY_INFO = "CallHistoryInfo";
+
     /* Call fail code extra key name */
     public static final String EXTRAS_KEY_CALL_FAIL_EXTRA_CODE  = "CallFailExtraCode";
 
