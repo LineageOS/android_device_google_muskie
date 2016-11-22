@@ -127,6 +127,15 @@ PRODUCT_PACKAGES +=                         \
     android.hardware.gatekeeper@1.0-impl    \
     android.hardware.gatekeeper@1.0-service \
 
+# Keymaster HAL
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@2.0-impl
+
+ifeq ($(ENABLE_TREBLE), true)
+PRODUCT_PACKAGES += \
+    android.hardware.keymaster@2.0-service
+endif
+
 PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
