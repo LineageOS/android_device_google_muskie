@@ -147,6 +147,11 @@ PRODUCT_PACKAGES += \
     fs_config_dirs \
     fs_config_files
 
+# Boot control HAL
+PRODUCT_PACKAGES += \
+    android.hardware.boot@1.0-impl \
+    android.hardware.boot@1.0-service \
+
 # Vibrator HAL
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
