@@ -122,6 +122,11 @@ PRODUCT_PACKAGES += \
     lights.$(PRODUCT_HARDWARE) \
     android.hardware.light@2.0-impl
 
+# gatekeeper HAL
+PRODUCT_PACKAGES +=                         \
+    android.hardware.gatekeeper@1.0-impl    \
+    android.hardware.gatekeeper@1.0-service \
+
 PRODUCT_PACKAGES += \
     libmm-omxcore \
     libOmxCore \
