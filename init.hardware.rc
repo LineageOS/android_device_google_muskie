@@ -417,3 +417,8 @@ service loc_launcher /vendor/bin/loc_launcher
 
 service pd_mapper /vendor/bin/pd-mapper
      class core
+
+service fingerprintd /system/bin/fingerprintd
+    class late_start
+    user system
+    group system
