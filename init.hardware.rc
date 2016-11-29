@@ -409,3 +409,6 @@ service hci_filter /vendor/bin/wcnss_filter
 service loc_launcher /vendor/bin/loc_launcher
     class late_start
     group gps inet diag wifi
+
+service pd_mapper /vendor/bin/pd-mapper
+     class core
