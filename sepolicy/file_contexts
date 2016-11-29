@@ -64,6 +64,7 @@
 /system/vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
 /system/vendor/bin/loc_launcher        u:object_r:location_exec:s0
 /system/vendor/bin/lowi-server         u:object_r:location_exec:s0
+/system/vendor/bin/pd-mapper           u:object_r:pd_mapper_exec:s0
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
