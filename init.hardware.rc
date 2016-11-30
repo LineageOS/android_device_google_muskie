@@ -394,6 +394,11 @@ service port-bridge /vendor/bin/port-bridge
     group radio system inet
     oneshot
 
+service qti /vendor/bin/qti
+    class main
+    user radio
+    group radio net_raw diag usb net_admin
+
 on property:wc_transport.start_hci=true
     start hci_filter
 
