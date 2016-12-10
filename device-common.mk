@@ -176,6 +176,10 @@ WPA += wpa_supplicant_wcn.conf
 WPA += wpa_supplicant
 PRODUCT_PACKAGES += $(WPA)
 
+PRODUCT_PACKAGES += \
+    wificond \
+    wifilogd
+
 LIB_NL := libnl_2
 PRODUCT_PACKAGES += $(LIB_NL)
 
