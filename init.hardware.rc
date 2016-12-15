@@ -240,11 +240,12 @@ service thermal-engine /vendor/bin/thermal-engine
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
 
+on property:persist.sys.ssr.restart_level=*
+    start ssr_setup
+
 service ssr_setup /vendor/bin/ssr_setup
-    class main
-    user root
-    group root system
     oneshot
+    disabled
 
 service ssr_diag /vendor/bin/ssr_diag
     class late_start
