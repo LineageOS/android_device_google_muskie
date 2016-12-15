@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-TARGET_BOARD_PLATFORM := msmcobalt
+TARGET_BOARD_PLATFORM := msm8998
 
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -58,7 +58,7 @@ BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
 
 BOARD_SECCOMP_POLICY = device/google/muskie/seccomp
 
-QCOM_BOARD_PLATFORMS += msmcobalt
+QCOM_BOARD_PLATFORMS += msm8998
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/google/muskie/bluetooth
 
