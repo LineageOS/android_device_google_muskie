@@ -46,7 +46,7 @@
     </pcm_ids>
     <config_params>
         <param key="input_mic_max_count" value="3"/>
-        <param key="snd_card_name" value="msmcobalt-tasha"/>
+        <param key="snd_card_name" value="msm8998-tasha"/>
     </config_params>
     <backend_names>
         <device name="SND_DEVICE_OUT_HEADPHONES" backend="headphones" interface="SLIMBUS_6_RX"/>
