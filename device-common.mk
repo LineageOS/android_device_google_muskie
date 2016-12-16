@@ -16,7 +16,7 @@
 
 LOCAL_PATH := device/google/muskie
 QCPATH := vendor/google_devices/muskie/proprietary
-SRC_MEDIA_HAL_DIR := hardware/qcom/media/msmcobalt
+SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/muskie-kernel/Image.gz-dtb
@@ -53,8 +53,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
 BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
 
-MSM_VIDC_TARGET_LIST := msmcobalt # Get the color format from kernel headers
-MASTER_SIDE_CP_TARGET_LIST := msmcobalt # ION specific settings
+MSM_VIDC_TARGET_LIST := msm8998 # Get the color format from kernel headers
+MASTER_SIDE_CP_TARGET_LIST := msm8998 # ION specific settings
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
@@ -111,8 +111,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 PRODUCT_PACKAGES += \
-    hwcomposer.msmcobalt \
-    gralloc.msmcobalt \
+    hwcomposer.msm8998 \
+    gralloc.msm8998 \
     android.hardware.graphics.composer@2.1-impl \
     libbt-vendor
 
@@ -124,7 +124,7 @@ PRODUCT_PACKAGES += \
 # gatekeeper HAL
 PRODUCT_PACKAGES +=                         \
     android.hardware.gatekeeper@1.0-impl    \
-    android.hardware.gatekeeper@1.0-service \
+    android.hardware.gatekeeper@1.0-service
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert
 
 PRODUCT_PACKAGES += \
-    camera.msmcobalt \
+    camera.msm8998 \
     libqomx_core \
     libmmjpeg_interface \
     libmmcamera_interface
@@ -184,7 +184,7 @@ LIB_NL := libnl_2
 PRODUCT_PACKAGES += $(LIB_NL)
 
 PRODUCT_PACKAGES += \
-    audio.primary.msmcobalt \
+    audio.primary.msm8998 \
     audio.a2dp.default \
     audio.usb.default \
     audio.r_submix.default \
