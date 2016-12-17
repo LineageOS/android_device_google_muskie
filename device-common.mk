@@ -103,6 +103,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.vendor.extension_library=libqti-perfd-client.so
 
+# camera gyro and laser sensor
+PRODUCT_PROPERTY_OVERRIDES += \
+  persist.camera.gyro.android=4 \
+  persist.camera.tof.direct=1
+
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
