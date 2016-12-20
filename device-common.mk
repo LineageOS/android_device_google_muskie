@@ -107,7 +107,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # camera gyro and laser sensor
 PRODUCT_PROPERTY_OVERRIDES += \
   persist.camera.gyro.android=4 \
-  persist.camera.tof.direct=1
+  persist.camera.tof.direct=1 \
+  persist.camera.max.previewfps=60
 
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
