@@ -166,6 +166,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
 
+# Thermal packages
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0-impl \
+    android.hardware.thermal@1.0-service
+
 #GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
