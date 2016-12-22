@@ -140,7 +140,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
   persist.camera.gyro.android=4 \
   persist.camera.tof.direct=1 \
-  persist.camera.max.previewfps=60
+  persist.camera.max.previewfps=60 \
+  persist.camera.sensor.hdr=2
 
 # camera service treble disable for bringup
 PRODUCT_PROPERTY_OVERRIDES += \
