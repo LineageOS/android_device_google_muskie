@@ -305,7 +305,7 @@ struct msm_eeprom_cfg_data {
 	enum eeprom_cfg_type_t cfgtype;
 	uint8_t is_supported;
 	union {
-		char eeprom_name[MAX_SENSOR_NAME];
+		char eeprom_name[MAX_EEPROM_NAME];
 		struct eeprom_get_t get_data;
 		struct eeprom_read_t read_data;
 		struct eeprom_write_t write_data;
@@ -483,15 +483,15 @@ struct msm_ois_slave_info {
 	struct msm_ois_opcode opcode;
 };
 
-struct ois_position{
-        uint8_t data0;
-        uint8_t data1;
-        uint8_t data2;
-        uint8_t data3;
-        uint8_t data4;
-        uint8_t data5;
-        uint8_t data6;
-        uint8_t data7;
+struct ois_position {
+	uint8_t data0;
+	uint8_t data1;
+	uint8_t data2;
+	uint8_t data3;
+	uint8_t data4;
+	uint8_t data5;
+	uint8_t data6;
+	uint8_t data7;
 };
 
 struct msm_ois_cfg_data {

@@ -338,7 +338,7 @@ struct msm_eeprom_cfg_data {
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
   uint8_t is_supported;
   union {
-    char eeprom_name[MAX_SENSOR_NAME];
+    char eeprom_name[MAX_EEPROM_NAME];
     struct eeprom_get_t get_data;
 /* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
     struct eeprom_read_t read_data;
