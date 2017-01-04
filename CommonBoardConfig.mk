@@ -45,10 +45,15 @@ BOARD_RAMDISK_OFFSET     := 0x02000000
 TARGET_BOARD_KERNEL_HEADERS := device/google/muskie/kernel-headers
 
 TARGET_NO_BOOTLOADER := true
+TARGET_NO_KERNEL := false
+TARGET_NO_RECOVERY := true
+TARGET_RECOVERY_FSTAB := device/google/muskie/fstab.hardware
+BOARD_USES_RECOVERY_AS_BOOT := true
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 
 ENABLE_CPUSETS := true
 
-TARGET_COPY_OUT_VENDOR := system/vendor
+TARGET_COPY_OUT_VENDOR := vendor
 
 BOARD_HAL_STATIC_LIBRARIES := libdumpstate.$(TARGET_BOOTLOADER_BOARD_NAME)
 
@@ -97,6 +102,5 @@ USE_XML_AUDIO_POLICY_CONF := 1
 AUDIO_FEATURE_ENABLED_MULTI_VOICE_SESSIONS := true
 AUDIO_FEATURE_ENABLED_SND_MONITOR := true
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
-
 
 -include vendor/google_devices/muskie/BoardConfigVendor.mk

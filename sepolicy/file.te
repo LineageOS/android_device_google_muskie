@@ -2,3 +2,9 @@ type sysfs_graphics, sysfs_type, fs_type;
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
+
+type firmware_file, fs_type, contextmount_type;
+
+type persist_file, file_type;
+type persist_data_file, file_type;
+type persist_display_file, file_type;

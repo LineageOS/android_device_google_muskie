@@ -70,3 +70,14 @@
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
 
+# /
+/tombstones             u:object_r:rootfs:s0
+/dsp                    u:object_r:rootfs:s0
+
+# files in firmware
+/firmware(/.*)?         u:object_r:firmware_file:s0
+
+# /persist
+/persist(/.*)?          u:object_r:persist_file:s0
+/persist/data(/.*)?     u:object_r:persist_data_file:s0
+/persist/display(/.*)?  u:object_r:persist_display_file:s0
