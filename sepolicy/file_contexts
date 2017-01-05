@@ -42,30 +42,30 @@
 /system/bin/init\.power\.sh            u:object_r:init_power_exec:s0
 /system/bin/init\.radio\.sh            u:object_r:init_radio_exec:s0
 
-# files in /system/vendor
-/system/vendor/bin/perfd               u:object_r:perfd_exec:s0
-/system/vendor/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
-/system/vendor/bin/sensors.qcom        u:object_r:sensors_exec:s0
-/system/vendor/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
-/system/vendor/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
-/system/vendor/bin/pm-service          u:object_r:per_mgr_exec:s0
-/system/vendor/bin/pm-proxy            u:object_r:per_mgr_exec:s0
-/system/vendor/bin/qseecomd            u:object_r:tee_exec:s0
-/system/vendor/bin/time_daemon         u:object_r:time_daemon_exec:s0
-/system/vendor/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
-/system/vendor/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
-/system/vendor/bin/irsc_util           u:object_r:irsc_util_exec:s0
-/system/vendor/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
-/system/vendor/bin/tftp_server         u:object_r:rfs_access_exec:s0
-/system/vendor/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
-/system/vendor/bin/cnss_diag           u:object_r:wcnss_service_exec:s0
-/system/vendor/bin/netmgrd             u:object_r:netmgrd_exec:s0
-/system/vendor/bin/port-bridge         u:object_r:port-bridge_exec:s0
-/system/vendor/bin/qti                 u:object_r:qti_exec:s0
-/system/vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
-/system/vendor/bin/loc_launcher        u:object_r:location_exec:s0
-/system/vendor/bin/lowi-server         u:object_r:location_exec:s0
-/system/vendor/bin/pd-mapper           u:object_r:pd_mapper_exec:s0
+# files in /vendor
+/vendor/bin/perfd               u:object_r:perfd_exec:s0
+/vendor/bin/thermal-engine      u:object_r:thermal-engine_exec:s0
+/vendor/bin/sensors.qcom        u:object_r:sensors_exec:s0
+/vendor/bin/ssr_setup           u:object_r:ssr_setup_exec:s0
+/vendor/bin/ssr_diag            u:object_r:ssr_diag_exec:s0
+/vendor/bin/pm-service          u:object_r:per_mgr_exec:s0
+/vendor/bin/pm-proxy            u:object_r:per_mgr_exec:s0
+/vendor/bin/qseecomd            u:object_r:tee_exec:s0
+/vendor/bin/time_daemon         u:object_r:time_daemon_exec:s0
+/vendor/bin/subsystem_ramdump   u:object_r:subsystem_ramdump_exec:s0
+/vendor/bin/adsprpcd            u:object_r:adsprpcd_exec:s0
+/vendor/bin/irsc_util           u:object_r:irsc_util_exec:s0
+/vendor/bin/rmt_storage         u:object_r:rmt_storage_exec:s0
+/vendor/bin/tftp_server         u:object_r:rfs_access_exec:s0
+/vendor/bin/cnss-daemon         u:object_r:wcnss_service_exec:s0
+/vendor/bin/cnss_diag           u:object_r:wcnss_service_exec:s0
+/vendor/bin/netmgrd             u:object_r:netmgrd_exec:s0
+/vendor/bin/port-bridge         u:object_r:port-bridge_exec:s0
+/vendor/bin/qti                 u:object_r:qti_exec:s0
+/vendor/bin/wcnss_filter        u:object_r:wcnss_filter_exec:s0
+/vendor/bin/loc_launcher        u:object_r:location_exec:s0
+/vendor/bin/lowi-server         u:object_r:location_exec:s0
+/vendor/bin/pd-mapper           u:object_r:pd_mapper_exec:s0
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0

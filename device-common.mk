@@ -124,7 +124,7 @@ ADDITIONAL_DEFAULT_PROPERTIES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
-    rild.libpath=/system/vendor/lib64/libril-qc-qmi-1.so
+    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.vendor.extension_library=libqti-perfd-client.so
