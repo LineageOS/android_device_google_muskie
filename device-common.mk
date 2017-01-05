@@ -168,7 +168,8 @@ PRODUCT_PACKAGES += \
 # Light HAL
 PRODUCT_PACKAGES += \
     lights.$(PRODUCT_HARDWARE) \
-    android.hardware.light@2.0-impl
+    android.hardware.light@2.0-impl \
+    android.hardware.light@2.0-service
 
 # gatekeeper HAL
 PRODUCT_PACKAGES +=                         \
