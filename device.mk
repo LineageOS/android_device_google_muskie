@@ -25,6 +25,10 @@ include device/google/muskie/device-common.mk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560 \
 
+# Use Sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=1
+
 # Thermal packages
 PRODUCT_PACKAGES += \
     thermal.default
