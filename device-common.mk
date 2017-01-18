@@ -119,7 +119,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vidc.debug.perf.mode=2
 
 # OEM Unlock reporting
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+ADDITIONAL_DEFAULT_PROPERTIES += \
     ro.oem_unlock_supported=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
