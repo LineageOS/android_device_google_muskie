@@ -135,6 +135,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.camera.tof.direct=1 \
   persist.camera.max.previewfps=60
 
+# camera service treble disable for bringup
+PRODUCT_PROPERTY_OVERRIDES += \
+  camera.disable_treble=1
+
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
