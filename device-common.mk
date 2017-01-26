@@ -232,6 +232,7 @@ WPA += wpa_supplicant
 PRODUCT_PACKAGES += $(WPA)
 
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     wificond \
     wifilogd
 
