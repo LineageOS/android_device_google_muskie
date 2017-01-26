@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-ifneq ($(filter muskie, $(TARGET_DEVICE)),)
+ifneq ($(filter muskie walleye, $(TARGET_DEVICE)),)
   include $(call first-makefiles-under, $(call my-dir))
 endif

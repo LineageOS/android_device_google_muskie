@@ -18,15 +18,15 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-PRODUCT_NAME := aosp_muskie
-PRODUCT_DEVICE := muskie
+PRODUCT_NAME := aosp_walleye
+PRODUCT_DEVICE := walleye
 PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on muskie
+PRODUCT_MODEL := AOSP on walleye
 PRODUCT_MANUFACTURER := Google
 PRODUCT_RESTRICT_VENDOR_FILES := all
 
 $(call inherit-product, device/google/muskie/utils.mk)
-$(call inherit-product, device/google/muskie/device-muskie.mk)
+$(call inherit-product, device/google/muskie/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor.mk)
 
 PRODUCT_PACKAGES += \

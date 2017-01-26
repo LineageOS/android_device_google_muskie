@@ -58,6 +58,10 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 MSM_VIDC_TARGET_LIST := msm8998 # Get the color format from kernel headers
 MASTER_SIDE_CP_TARGET_LIST := msm8998 # ION specific settings
 
+# Use Sdcardfs
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=1
+
 # A/B support
 PRODUCT_PACKAGES += \
     otapreopt_script \
@@ -250,6 +254,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.broadcastradio@1.0-impl \
     android.hardware.soundtrigger@2.0-impl
+
+# Thermal packages
+PRODUCT_PACKAGES += \
+    thermal.default
 
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES += \
