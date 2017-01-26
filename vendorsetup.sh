@@ -15,3 +15,4 @@
 #
 
 add_lunch_combo aosp_muskie-userdebug
+add_lunch_combo aosp_walleye-userdebug
