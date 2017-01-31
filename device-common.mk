@@ -17,6 +17,7 @@
 LOCAL_PATH := device/google/muskie
 QCPATH := vendor/google_devices/muskie/proprietary
 SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
     LOCAL_KERNEL := device/google/muskie-kernel/Image.gz-dtb
