@@ -223,6 +223,10 @@ on boot
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
+    # Required for time_daemon
+    mkdir /persist/time 0770 system system
+    mkdir /data/time/ 0700 system system
+
 service init-radio-sh /system/bin/init.radio.sh
     class late_start
     user radio
