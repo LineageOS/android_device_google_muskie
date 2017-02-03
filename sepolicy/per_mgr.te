@@ -4,6 +4,10 @@ type per_mgr_exec, exec_type, file_type;
 
 init_daemon_domain(per_mgr);
 
+add_service(per_mgr, per_mgr_service)
+
+binder_use(per_mgr)
+
 userdebug_or_eng(`
 permissive per_mgr;
 ')
