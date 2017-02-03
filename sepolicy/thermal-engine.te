@@ -2,3 +2,7 @@ type thermal-engine, domain;
 type thermal-engine_exec, exec_type, file_type;
 
 init_daemon_domain(thermal-engine)
+
+userdebug_or_eng(`
+permissive thermal-engine;
+')

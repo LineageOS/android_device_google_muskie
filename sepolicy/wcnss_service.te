@@ -1,5 +1,9 @@
-type wcnss_service, domain, domain_deprecated;
+type wcnss_service, domain;
 type wcnss_service_exec, exec_type, file_type;
 
 init_daemon_domain(wcnss_service)
 net_domain(wcnss_service)
+
+userdebug_or_eng(`
+permissive wcnss_service;
+')
