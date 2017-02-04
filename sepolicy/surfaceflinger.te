@@ -1,0 +1,2 @@
+# persist
+allow surfaceflinger persist_file:dir search;
