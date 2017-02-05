@@ -20,7 +20,7 @@ SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/google/muskie-kernel/Image.gz-dtb
+    LOCAL_KERNEL := device/google/muskie-kernel/Image.lz4-dtb
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
