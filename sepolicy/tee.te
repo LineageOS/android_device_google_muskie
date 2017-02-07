@@ -1,3 +1,6 @@
+allow tee self:capability { chown setgid setuid sys_admin sys_rawio };
+
 allow tee device:dir r_dir_perms;
 
-allow tee block_device:dir { getattr search};
+allow tee block_device:dir { getattr search };
+allow tee sg_device:chr_file { rw_file_perms setattr };

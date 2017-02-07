@@ -12,3 +12,4 @@ type avtimer_device, dev_type;
 type ssr_device, dev_type;
 type ramdump_device, dev_type;
 type hbtp_device, dev_type;
+type sg_device, dev_type;

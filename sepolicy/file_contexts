@@ -25,6 +25,7 @@
 /dev/ramdump_.*                                 u:object_r:ramdump_device:s0
 /dev/hbtp_input                                 u:object_r:hbtp_device:s0
 /dev/hbtp_vm                                    u:object_r:hbtp_device:s0
+/dev/sg[0-9]+                                   u:object_r:sg_device:s0
 
 # dev socket nodes
 /dev/socket/qmux_audio(/.*)?                    u:object_r:qmuxd_socket:s0
