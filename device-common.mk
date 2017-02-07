@@ -175,6 +175,11 @@ PRODUCT_PACKAGES +=                         \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
 
+# Bluetooth HAL
+PRODUCT_PACKAGES += \
+  android.hardware.bluetooth@1.0-impl    \
+  android.hardware.bluetooth@1.0-service
+
 ifeq ($(ENABLE_TREBLE), true)
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-service
