@@ -1,2 +1,1 @@
-# persist
-allow surfaceflinger persist_file:dir search;
+dontaudit surfaceflinger firmware_file:dir search;
