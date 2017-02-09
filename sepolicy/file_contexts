@@ -43,6 +43,8 @@
 # files in /system
 /system/bin/init\.power\.sh            u:object_r:init_power_exec:s0
 /system/bin/init\.radio\.sh            u:object_r:init_radio_exec:s0
+/system/bin/location-mq-s              u:object_r:location_exec:s0
+/system/bin/lowi-server                u:object_r:location_exec:s0
 /system/bin/ramdump                    u:object_r:ramdump_exec:s0
 
 # files in /vendor
