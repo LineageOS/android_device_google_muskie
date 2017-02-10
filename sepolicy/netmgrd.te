@@ -4,6 +4,11 @@ type netmgrd_exec, exec_type, file_type;
 net_domain(netmgrd)
 init_daemon_domain(netmgrd)
 
+allow netmgrd self:socket create_socket_perms_no_ioctl;
+allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
+
+allow netmgrd toolbox_exec:file rx_file_perms;
+
 userdebug_or_eng(`
 permissive netmgrd;
 ')
