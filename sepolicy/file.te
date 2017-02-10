@@ -8,3 +8,4 @@ type firmware_file, fs_type, contextmount_type;
 type persist_file, file_type;
 type persist_data_file, file_type;
 type persist_display_file, file_type;
+type persist_sensors_file, file_type;
