@@ -37,6 +37,8 @@
 /dev/socket/thermal-recv-client                 u:object_r:thermal_socket:s0
 /dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
 
+# dev block nodes
+/dev/block/sdd[0-9]+                            u:object_r:sdd_block_device:s0
 # files in sysfs
 /sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
 /sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
