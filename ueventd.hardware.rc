@@ -94,3 +94,7 @@
 # fpc fingerprint
 /sys/devices/soc/soc:fp_fpc*        irq               0600  system system
 /sys/devices/soc/soc:fp_fpc*        wakeup_enable     0200  system system
+
+# Paintbox/Easel
+/dev/easelcomm-client     0660   cameraserver camera
+/dev/mnh_sm               0660   cameraserver camera
