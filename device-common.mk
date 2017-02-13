@@ -152,10 +152,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
   persist.camera.max.previewfps=60 \
   persist.camera.sensor.hdr=2
 
-# camera service treble disable for bringup
-PRODUCT_PROPERTY_OVERRIDES += \
-  camera.disable_treble=1
-
 # WLAN driver configuration files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
@@ -204,6 +200,8 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert
 
 PRODUCT_PACKAGES += \
+    android.hardware.camera.provider@2.4-impl \
+    camera.device@3.2-impl \
     camera.msm8998 \
     libqomx_core \
     libmmjpeg_interface \
