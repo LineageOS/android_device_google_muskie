@@ -59,6 +59,10 @@ BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 MSM_VIDC_TARGET_LIST := msm8998 # Get the color format from kernel headers
 MASTER_SIDE_CP_TARGET_LIST := msm8998 # ION specific settings
 
+# Vendor Interface Manifest
+PRODUCT_COPY_FILES += \
+    device/google/muskie/vintf.xml:vendor/manifest.xml
+
 # Use Sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.sdcardfs=1
