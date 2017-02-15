@@ -39,6 +39,7 @@
 /dev/socket/thermal-recv-client                 u:object_r:thermal_socket:s0
 /dev/socket/thermal-recv-passive-client         u:object_r:thermal_socket:s0
 /dev/socket/perfd                               u:object_r:perfd_socket:s0
+/dev/socket/netmgr(/.*)?                        u:object_r:netmgrd_socket:s0
 
 # dev block nodes
 /dev/block/sdd[0-9]+                            u:object_r:sdd_block_device:s0
@@ -50,6 +51,7 @@
 /sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
 /sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
+/sys/devices/virtual/net(/.*)?                                      u:object_r:sysfs_net:s0
 /sys/devices/soc/8c0000\.qcom,msm-cam(/.*)?                         u:object_r:sysfs_camera:s0
 /sys/devices/soc0(/.*)?                                             u:object_r:sysfs_soc:s0
 /sys/devices/soc/caa0000\.qcom,jpeg(/.*)?                           u:object_r:sysfs_camera:s0
@@ -90,6 +92,7 @@
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
 /data/misc/radio(/.*)?                 u:object_r:radio_data_file:s0
+/data/misc/netmgr(/.*)?                u:object_r:netmgr_data_file:s0
 
 # /
 /tombstones             u:object_r:rootfs:s0
