@@ -79,6 +79,7 @@
 
 # data files
 /data/time(/.*)?                       u:object_r:time_data_file:s0
+/data/misc/radio(/.*)?                 u:object_r:radio_data_file:s0
 
 # /
 /tombstones             u:object_r:rootfs:s0
