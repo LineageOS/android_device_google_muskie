@@ -205,7 +205,8 @@ PRODUCT_PACKAGES += \
     libmmcamera_interface
 
 PRODUCT_PACKAGES += \
-    sensors.$(PRODUCT_HARDWARE)
+    sensors.$(PRODUCT_HARDWARE) \
+    android.hardware.sensors@1.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/sensors/hals.conf:system/etc/sensors/hals.conf
