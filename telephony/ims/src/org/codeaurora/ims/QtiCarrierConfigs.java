@@ -74,4 +74,8 @@ public class QtiCarrierConfigs {
     public static final String SHOW_CALL_SESSION_EVENT_TOAST = "show_call_session_event_toast";
     /* Config to show/hide data usage toast */
     public static final String SHOW_DATA_USAGE_TOAST = "show_data_usage_toast";
+    /* Config that controls whether to stop video preview video and show static image
+       in video preview or not
+       true - enabled, false - disabled */
+    public static final String TRANSMIT_STATIC_IMAGE = "transmit_static_image";
 }

@@ -222,4 +222,19 @@ interface IExtTelephony {
     */
     void supplyIccDepersonalization(String netpin, String type, in IDepersoResCallback callback,
             int phoneId);
+
+    /**
+    * Returns ID of the slot in which PrimaryCarrier SIM card is present.
+    * If none of the slots contains PrimaryCarrier SIM, this would return '-1'
+    * Supported values: 0, 1, -1
+    */
+    int getPrimaryCarrierSlotId();
+
+    /**
+    * Check if slotId has PrimaryCarrier SIM card present or not.
+    * @param - slotId
+    * @return true or false
+    */
+    boolean isPrimaryCarrierSlotId(int slotId);
+
 }
