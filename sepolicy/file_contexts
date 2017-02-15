@@ -43,6 +43,7 @@
 /sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
 /sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
 /sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
+/sys/devices/soc/8c0000\.qcom,msm-cam(/.*)?                         u:object_r:sysfs_camera:s0
 
 # files in /system
 /system/bin/init\.power\.sh            u:object_r:init_power_exec:s0
