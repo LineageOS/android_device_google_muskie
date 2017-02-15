@@ -1,0 +1,3 @@
+binder_call(audioserver, bootanim)
+
+allow audioserver perfd_socket:sock_file write;
