@@ -3,6 +3,7 @@ type sysfs_camera, sysfs_type, fs_type;
 type qmuxd_socket, file_type;
 type netmgrd_socket, file_type;
 type thermal_socket, file_type;
+type perfd_socket, file_type;
 
 type firmware_file, fs_type, contextmount_type;
 
