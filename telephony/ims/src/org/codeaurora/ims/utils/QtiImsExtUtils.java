@@ -31,12 +31,18 @@ package org.codeaurora.ims.utils;
 
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.os.PersistableBundle;
 import android.os.SystemProperties;
 import android.telephony.CarrierConfigManager;
 import android.telephony.SubscriptionInfo;
 import android.telephony.SubscriptionManager;
 import android.util.Log;
+
+import java.io.File;
 
 import org.codeaurora.ims.QtiCallConstants;
 import org.codeaurora.ims.QtiCarrierConfigs;
@@ -67,6 +73,9 @@ public class QtiImsExtUtils {
 
     /* Carrier one default mcc mnc */
     public static final String CARRIER_ONE_DEFAULT_MCC_MNC = "405854";
+
+    public static final String QTI_IMS_STATIC_IMAGE_SETTING =
+            "ims_vt_call_static_image";
 
     /**
      * Definitions for the call transfer type. For easier implementation,
@@ -152,6 +161,175 @@ public class QtiImsExtUtils {
 
         android.provider.Settings.Global.putString(contentResolver,
                 QTI_IMS_CALL_DEFLECT_NUMBER, deflectNum);
+    }
+
+   /**
+     * Retrieves the static image stored by the user
+     * Returns stored static image file path, or null otherwise.
+     */
+    public static String getStaticImageUriStr(ContentResolver contentResolver) {
+        return android.provider.Settings.Global.getString(contentResolver,
+                                     QTI_IMS_STATIC_IMAGE_SETTING);
+    }
+
+    private static boolean isValidUriStr(String uri) {
+        /* uri is not valid if
+         * 1. uri is null
+         * 2. uri is empty
+         * 3. uri doesn't exist in UE
+         */
+        return uri != null && !uri.isEmpty() && (new File(uri)).exists();
+    }
+
+    /**
+     * Calculate an inSampleSize for use in a {@link android.graphics.BitmapFactory.Options} object
+     * when decoding bitmaps using the decode* methods from {@link android.graphics.BitmapFactory}.
+     * This implementation calculates the closest inSampleSize that is a power of 2 and will result
+     * in the final decoded bitmap having a width and height equal to or larger than the requested
+     * width and height.
+     *
+     * @param options An options object with out* params already populated (run through a decode*
+     *            method with inJustDecodeBounds==true
+     * @param reqWidth The requested width of the resulting bitmap
+     * @param reqHeight The requested height of the resulting bitmap
+     * @return The value to be used for inSampleSize
+     */
+    private static int calculateInSampleSize(
+            BitmapFactory.Options options, int reqWidth, int reqHeight) {
+        // Raw height and width of image
+        final int height = options.outHeight;
+        final int width = options.outWidth;
+        int inSampleSize = 1;
+
+        Log.d(LOG_TAG, "calculateInSampleSize: reqWidth = " + reqWidth + " reqHeight = " + reqHeight
+                + " raw width = " + width + " raw height = " + height);
+
+        if (height > reqHeight || width > reqWidth) {
+            final int halfHeight = height / 2;
+            final int halfWidth = width / 2;
+
+            // Calculate the largest inSampleSize value that is a power of 2 and keeps both
+            // height and width larger than the requested height and width.
+            while ((halfHeight / inSampleSize) > reqHeight
+                    && (halfWidth / inSampleSize) > reqWidth) {
+                inSampleSize *= 2;
+            }
+        }
+        Log.d(LOG_TAG, "calculateInSampleSize: inSampleSize = " + inSampleSize);
+        return inSampleSize;
+    }
+
+    /**
+     * Decodes an image pointed to by uri as per requested Width and requested Height
+     * and returns a bitmap
+     */
+    public static Bitmap decodeImage(String uri, int reqWidth, int reqHeight) {
+        if (uri == null) {
+            return null;
+        }
+
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        // Each pixel is stored on 4 bytes
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+        /* If set to true, the decoder will return null (no bitmap),
+           but the out... fields (i.e. outWidth, outHeight and outMimeType)
+           will still be set, allowing the caller to query the bitmap
+           without having to allocate the memory for its pixels */
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeFile(uri, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        Bitmap bitmap = BitmapFactory.decodeFile(uri, options);
+        return scaleImage(bitmap, reqWidth, reqHeight);
+    }
+
+    // scales the image using reqWidth/reqHeight and returns a scaled bitmap
+    private static Bitmap scaleImage(Bitmap bitmap, int reqWidth, int reqHeight) {
+        if (bitmap == null) {
+            return null;
+        }
+
+        int w = bitmap.getWidth();
+        int h = bitmap.getHeight();
+        float scaleWidth = ((float) reqWidth) / w;
+        float scaleHeight = ((float) reqHeight) / h;
+        Log.d(LOG_TAG, "scaleImage bitmap w = " + w + " bitmap h = " + h);
+
+        Matrix matrix = new Matrix();
+        matrix.postScale(scaleWidth, scaleHeight);
+        Bitmap resizedBitmap = Bitmap.createBitmap(
+               bitmap, 0, 0, w, h, matrix, false);
+        return resizedBitmap;
+    }
+
+    /**
+     * Decode and sample down a bitmap from a resource to the requested width and height.
+     *
+     * @param res The resources containing the resId
+     * @param resId The resource id
+     * @param reqWidth The requested width of the resulting bitmap
+     * @param reqHeight The requested height of the resulting bitmap
+     * @return A down sampled bitmap
+     */
+    public static Bitmap decodeImage(Resources res, int resId,
+            int reqWidth, int reqHeight) {
+
+        // First decode with inJustDecodeBounds=true to check dimensions
+        final BitmapFactory.Options options = new BitmapFactory.Options();
+        // Each pixel is stored on 4 bytes
+        options.inPreferredConfig = Bitmap.Config.ARGB_8888;
+        /* If set to true, the decoder will return null (no bitmap),
+           but the out... fields (i.e. outWidth, outHeight and outMimeType)
+           will still be set, allowing the caller to query the bitmap
+           without having to allocate the memory for its pixels */
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeResource(res, resId, options);
+
+        // Calculate inSampleSize
+        options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
+
+        // Decode bitmap with inSampleSize set
+        options.inJustDecodeBounds = false;
+        Bitmap bitmap = BitmapFactory.decodeResource(res, resId, options);
+        return scaleImage(bitmap, reqWidth, reqHeight);
+    }
+
+    /*
+     * This API:
+     * 1. Checks to see if user has preconfigured any image
+     * 2. Throws an INVALID_FILE_PATH exception if image file path is invalid
+     * 3. Throws an IMAGE_DECODING_FAILURE exception if image decoding failed
+     * 4. Returns a downsampled bitmap in all other cases.
+     */
+    public static Bitmap getStaticImage(Context context, int reqWidth, int reqHeight)
+            throws QtiImsException {
+        // Query database for user selected image
+        String uriStr = getStaticImageUriStr(context.getContentResolver());
+        Log.d(LOG_TAG, "getStaticImage: uriStr = " + uriStr + " reqWidth = " + reqWidth +
+                " reqHeight = " + reqHeight);
+
+        if (!isValidUriStr(uriStr)) {
+            throw new QtiImsException("invalid file path");
+        }
+
+        Bitmap imageBitmap = decodeImage(uriStr, reqWidth, reqHeight);
+        if (imageBitmap == null) {
+            throw new QtiImsException("image decoding error");
+        }
+        return imageBitmap;
+    }
+
+    /***
+     * Checks if the IMS Video call hide me feature is enabled or not.
+     * Returns true if enabled, or false otherwise.
+     */
+    public static boolean shallTransmitStaticImage(Context context) {
+        return isCarrierConfigEnabled(context, QtiCarrierConfigs.TRANSMIT_STATIC_IMAGE);
+
     }
 
     /***

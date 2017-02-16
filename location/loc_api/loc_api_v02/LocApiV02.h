@@ -82,9 +82,10 @@ private:
   static bool convertNiNotifyVerifyType (LocGpsNiNotification *notif,
       qmiLocNiNotifyVerifyEnumT_v02 notif_priv);
 
-  /*convert LocGnssMeasurement type from QMI LOC to loc eng format*/
+  /*convert GnssMeasurement type from QMI LOC to loc eng format*/
   static void convertGnssMeasurements (LocGnssMeasurement& gnssMeasurement,
-      const qmiLocSVMeasurementStructT_v02& gnss_measurement_info);
+      const qmiLocSVMeasurementStructT_v02& gnss_measurement_info,
+      const qmiLocSvSystemEnumT_v02 system);
 
   /*convert LocGnssClock type from QMI LOC to loc eng format*/
   void convertGnssClock (LocGnssClock& gnssClock,
@@ -93,7 +94,8 @@ private:
   /* If Confidence value is less than 68%, then scale the accuracy value to 68%
      confidence.*/
   void scaleAccuracyTo68PercentConfidence(const uint8_t confidenceValue,
-                                          LocGpsLocation &gpsLocation);
+                                          LocGpsLocation &gpsLocation,
+                                          const bool isCircularUnc);
 
   /* convert position report to loc eng format and send the converted
      position to loc eng */
