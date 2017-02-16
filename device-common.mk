@@ -15,8 +15,12 @@
 #
 
 LOCAL_PATH := device/google/muskie
+
 QCPATH := vendor/google_devices/muskie/proprietary
 SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
+SRC_DISPLAY_HAL_DIR := hardware/qcom/display/msm8998
+SRC_CAMERA_HAL_DIR := hardware/qcom/camera/msm8998
+
 TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
