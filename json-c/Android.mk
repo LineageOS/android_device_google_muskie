@@ -31,6 +31,7 @@ LOCAL_SRC_FILES := arraylist.c \
 		linkhash.c \
 		printbuf.c \
 		random_seed.c
+LOCAL_CFLAGS += -Wno-unused-parameter -Werror
 LOCAL_SHARED_LIBRARIES := libcutils libutils
 LOCAL_MODULE_TAG := optional
 include $(BUILD_SHARED_LIBRARY)
