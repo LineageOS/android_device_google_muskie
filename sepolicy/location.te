@@ -14,6 +14,7 @@ allow location self:capability { setgid setuid };
 
 allow location proc_net:file r_file_perms;
 allow location location_data_file:file w_file_perms;
+allow location location_data_file:sock_file w_file_perms;
 
 allow location self:netlink_route_socket create_socket_perms_no_ioctl;
 allow location self:udp_socket create_socket_perms;

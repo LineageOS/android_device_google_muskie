@@ -11,16 +11,18 @@ unix_socket_connect(netmgrd, netd, netd)
 
 allow netmgrd self:socket create_socket_perms_no_ioctl;
 allow netmgrd netmgrd_socket:dir w_dir_perms;
+allow netmgrd netmgrd_socket:sock_file { create setattr };
+allow netmgrd self:netlink_socket create_socket_perms_no_ioctl;
 allowxperm netmgrd self:udp_socket ioctl priv_sock_ioctls;
 
-allow netmgrd sysfs_net:file w_file_perms;
+allow netmgrd sysfs_net:file rw_file_perms;
 allow netmgrd sysfs_net:dir r_dir_perms;
-allow netmgrd proc_net:file w_file_perms;
+allow netmgrd proc_net:file rw_file_perms;
 allow netmgrd net_data_file:dir r_dir_perms;
 allow netmgrd netmgr_data_file:file rw_file_perms;
 allow netmgrd system_file:file execute_no_trans;
 
-allow netmgrd self:capability { net_admin setuid };
+allow netmgrd self:capability { net_admin net_raw setuid };
 
 allow netmgrd toolbox_exec:file rx_file_perms;
 
