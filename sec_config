@@ -311,6 +311,10 @@
 70:4294967295:1001
 /* Allow Data dpmd to access QMI DFS */
 48:4294967295:1000:3004
+/* hTC Extended QMI service from modem team. more protocol related */
+229:4294967295:1001
+/* hTC Extended QMI service from modem BSP team */
+230:4294967295:1001
 /* DIAG */
 4097:4294967295:2002:2950:3009
 /* <WLFW QMI Service ID - 0x45>:<WLFW QMI Instance ID - all instances>:<Client Group ID> */
