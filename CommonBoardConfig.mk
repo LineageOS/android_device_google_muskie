@@ -64,8 +64,6 @@ BOARD_ROOT_EXTRA_FOLDERS := persist firmware
 
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
 
-BOARD_SECCOMP_POLICY = device/google/muskie/seccomp
-
 QCOM_BOARD_PLATFORMS += msm8998
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/google/muskie/bluetooth
