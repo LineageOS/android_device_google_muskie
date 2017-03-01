@@ -14,3 +14,4 @@ type ramdump_device, dev_type;
 type hbtp_device, dev_type;
 type sg_device, dev_type;
 type sdd_block_device, dev_type;
+type sdf_block_device, dev_type;

@@ -43,6 +43,8 @@
 
 # dev block nodes
 /dev/block/sdd[0-9]+                            u:object_r:sdd_block_device:s0
+/dev/block/sdf[0-9]+                            u:object_r:sdf_block_device:s0
+
 # files in sysfs
 /sys/class/uio(/.*)?                                                u:object_r:sysfs_uio:s0
 /sys/devices/soc/c900000.qcom,mdss_mdp/c900000.qcom,mdss_mdp:qcom,mdss_fb_primary/leds(/.*)? u:object_r:sysfs_leds:s0
@@ -50,14 +52,16 @@
 /sys/devices/soc/0\.qcom,rmtfs_sharedmem(/.*)?                      u:object_r:sysfs_rmtfs:s0
 /sys/devices/soc/soc:fp_fpc1020(/.*)?                               u:object_r:sysfs_fingerprint:s0
 /sys/devices/virtual/thermal(/.*)?                                  u:object_r:sysfs_thermal:s0
+/sys/kernel/debug/rmt_storage(/.*)?                                 u:object_r:debugfs_rmt_storage:s0
 /sys/module/msm_thermal(/.*)?                                       u:object_r:sysfs_thermal:s0
+/sys/module/tcp_cubic/parameters(/.*)?                              u:object_r:sysfs_net:s0
 /sys/devices/virtual/graphics/fb([0-2])+/idle_time                  u:object_r:sysfs_graphics:s0
 /sys/devices/virtual/net(/.*)?                                      u:object_r:sysfs_net:s0
 /sys/devices/soc/8c0000\.qcom,msm-cam(/.*)?                         u:object_r:sysfs_camera:s0
 /sys/devices/soc0(/.*)?                                             u:object_r:sysfs_soc:s0
 /sys/devices/soc/caa0000\.qcom,jpeg(/.*)?                           u:object_r:sysfs_camera:s0
 /sys/devices/soc/caa4000\.qcom,fd(/.*)?                             u:object_r:sysfs_camera:s0
-/sys/bus/msm_subsys(/.*)?                        		    u:object_r:sysfs_msm_subsys:s0
+/sys/bus/msm_subsys(/.*)?                                           u:object_r:sysfs_msm_subsys:s0
 
 # files in /system
 /system/bin/init\.power\.sh            u:object_r:init_power_exec:s0
