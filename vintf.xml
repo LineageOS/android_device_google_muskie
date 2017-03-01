@@ -10,5 +10,9 @@
         <transport>hwbinder</transport>
         <impl level="generic"></impl>
         <version>2.1</version>
+        <interface>
+            <name>IBiometricsFingerprint</name>
+            <instance>fingerprint_hal</instance>
+        </interface>
     </hal>
 </manifest>
