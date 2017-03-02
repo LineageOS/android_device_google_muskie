@@ -68,7 +68,7 @@ MASTER_SIDE_CP_TARGET_LIST := msm8998 # ION specific settings
 
 # Vendor Interface Manifest
 PRODUCT_COPY_FILES += \
-    device/google/muskie/vintf.xml:vendor/manifest.xml
+    device/google/muskie/manifest.xml:vendor/manifest.xml
 
 # Use Sdcardfs
 PRODUCT_PROPERTY_OVERRIDES += \
