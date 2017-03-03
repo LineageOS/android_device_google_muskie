@@ -101,4 +101,7 @@ AUDIO_FEATURE_ENABLED_SND_MONITOR := true
 AUDIO_FEATURE_ENABLED_USB_TUNNEL := true
 BOARD_ROOT_EXTRA_SYMLINKS := /vendor/lib/dsp:/dsp
 
+# Graphics
+TARGET_USES_GRALLOC1 := true
+
 -include vendor/google_devices/muskie/BoardConfigVendor.mk
