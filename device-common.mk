@@ -16,7 +16,7 @@
 
 LOCAL_PATH := device/google/muskie
 
-QCPATH := vendor/google_devices/muskie/proprietary
+QCPATH := vendor/qcom/msm8998/proprietary
 SRC_MEDIA_HAL_DIR := hardware/qcom/media/msm8998
 SRC_DISPLAY_HAL_DIR := hardware/qcom/display/msm8998
 SRC_CAMERA_HAL_DIR := hardware/qcom/camera/msm8998
