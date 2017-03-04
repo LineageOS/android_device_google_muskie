@@ -29,7 +29,6 @@ PRODUCT_MODEL := AOSP on muskie
 PRODUCT_MANUFACTURER := Google
 PRODUCT_RESTRICT_VENDOR_FILES := all
 
-$(call inherit-product, device/google/muskie/utils.mk)
 $(call inherit-product, device/google/muskie/device-muskie.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-muskie.mk)
 

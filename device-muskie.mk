@@ -20,7 +20,19 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 PRODUCT_HARDWARE := muskie
 
-include device/google/muskie/device-common.mk
+TARGET_PREBUILT_KERNEL := device/google/muskie-kernel/Image.lz4-dtb
+
+# fstab: should be shared through wahoo when that becomes possible:
+PRODUCT_COPY_FILES += \
+    device/google/wahoo/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE) \
+
+# Kernel modules
+PRODUCT_COPY_FILES += \
+    device/google/muskie-kernel/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \
+    device/google/muskie-kernel/synaptics_dsx_rmi_dev_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/muskie-kernel/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
+
+include device/google/wahoo/device.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560 \

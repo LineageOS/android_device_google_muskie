@@ -29,7 +29,6 @@ PRODUCT_MODEL := AOSP on walleye
 PRODUCT_MANUFACTURER := Google
 PRODUCT_RESTRICT_VENDOR_FILES := all
 
-$(call inherit-product, device/google/muskie/utils.mk)
 $(call inherit-product, device/google/muskie/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-walleye.mk)
 

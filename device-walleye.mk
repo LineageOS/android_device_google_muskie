@@ -20,7 +20,19 @@ PRODUCT_AAPT_PREBUILT_DPI := xxhdpi xhdpi hdpi
 
 PRODUCT_HARDWARE := walleye
 
-include device/google/muskie/device-common.mk
+TARGET_PREBUILT_KERNEL := device/google/muskie-kernel/Image.lz4-dtb
+
+# Kernel modules
+PRODUCT_COPY_FILES += \
+    device/google/muskie-kernel/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \
+    device/google/muskie-kernel/synaptics_dsx_rmi_dev_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/muskie-kernel/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
+
+include device/google/wahoo/device.mk
+
+# Until all devices supports encryption, need an fstab without encryption
+PRODUCT_COPY_FILES += \
+    device/google/taimen/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE) \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420

@@ -17,4 +17,5 @@
 TARGET_BOOTLOADER_BOARD_NAME := walleye
 DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
 
-include device/google/muskie/CommonBoardConfig.mk
+include device/google/wahoo/BoardConfig.mk
+-include vendor/google_devices/muskie/BoardConfigVendor.mk
