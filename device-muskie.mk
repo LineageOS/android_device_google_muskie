@@ -22,10 +22,6 @@ PRODUCT_HARDWARE := muskie
 
 TARGET_PREBUILT_KERNEL := device/google/muskie-kernel/Image.lz4-dtb
 
-# fstab: should be shared through wahoo when that becomes possible:
-PRODUCT_COPY_FILES += \
-    device/google/wahoo/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE) \
-
 # Kernel modules
 PRODUCT_COPY_FILES += \
     device/google/muskie-kernel/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \

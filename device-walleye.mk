@@ -30,9 +30,5 @@ PRODUCT_COPY_FILES += \
 
 include device/google/wahoo/device.mk
 
-# Until all devices supports encryption, need an fstab without encryption
-PRODUCT_COPY_FILES += \
-    device/google/taimen/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE) \
-
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
