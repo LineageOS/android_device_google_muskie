@@ -23,3 +23,12 @@ PRODUCT_COPY_FILES += \
     device/google/muskie-kernel/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \
     device/google/muskie-kernel/synaptics_dsx_rmi_dev_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_rmi_dev_htc.ko \
     device/google/muskie-kernel/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
+
+# Audio fluence, ns, aec property, voice volume steps
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qc.sdk.audio.fluencetype=fluencepro \
+    persist.audio.fluence.voicecall=true \
+    persist.audio.fluence.speaker=true \
+    persist.audio.fluence.voicecomm=true \
+    persist.audio.fluence.voicerec=false \
+    ro.config.vc_call_vol_steps=7
