@@ -14,23 +14,15 @@
 # limitations under the License.
 #
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-
-# Enforce privapp-permissions whitelist
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.control_privapp_permissions=enforce
-
-PRODUCT_NAME := aosp_walleye
-PRODUCT_DEVICE := walleye
-PRODUCT_BRAND := Android
-PRODUCT_MODEL := AOSP on walleye
-PRODUCT_MANUFACTURER := Google
-PRODUCT_RESTRICT_VENDOR_FILES := all
-
 $(call inherit-product, device/google/muskie/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
     Launcher3
+
+PRODUCT_RESTRICT_VENDOR_FILES := all
+PRODUCT_MANUFACTURER := Google
+PRODUCT_BRAND := Android
+PRODUCT_NAME := aosp_walleye
+PRODUCT_DEVICE := walleye
+PRODUCT_MODEL := AOSP on walleye
