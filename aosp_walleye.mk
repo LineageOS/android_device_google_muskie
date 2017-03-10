@@ -18,7 +18,8 @@ $(call inherit-product, device/google/muskie/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-walleye.mk)
 
 PRODUCT_PACKAGES += \
-    Launcher3
+    Launcher3 \
+    Dialer
 
 PRODUCT_RESTRICT_VENDOR_FILES := all
 PRODUCT_MANUFACTURER := Google
