@@ -22,5 +22,7 @@ PRODUCT_HARDWARE := walleye
 
 include device/google/muskie/device-common.mk
 
+DEVICE_PACKAGE_OVERLAYS += device/google/muskie/walleye/overlay
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
