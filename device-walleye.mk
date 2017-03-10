@@ -24,3 +24,5 @@ include device/google/muskie/device-common.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
+
+DEVICE_PACKAGE_OVERLAYS += device/google/muskie/walleye/overlay
