@@ -16,6 +16,15 @@
 
 TARGET_PREBUILT_KERNEL := device/google/muskie-kernel/Image.lz4-dtb
 
+LOCAL_PATH := device/google/muskie
+
+# Audio XMLs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
+    $(LOCAL_PATH)/mixer_paths_tavil.xml:system/etc/mixer_paths_tavil.xml \
+    $(LOCAL_PATH)/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(LOCAL_PATH)/audio_platform_info_tavil.xml:system/etc/audio_platform_info_tavil.xml
+
 include device/google/wahoo/device.mk
 
 # Kernel modules
