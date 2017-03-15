@@ -41,3 +41,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicecomm=true \
     persist.audio.fluence.voicerec=false \
     ro.config.vc_call_vol_steps=7
+
+# Enable SM log mechanism by default
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.radio.smlog_switch=1
+endif
+
+# SM loging file
+PRODUCT_COPY_FILES += \
+    device/google/muskie/init.logging.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
+
+# Dumpstate HAL
+PRODUCT_PACKAGES += \
+    android.hardware.dumpstate@1.0-service.muskie
