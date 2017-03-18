@@ -22,6 +22,8 @@ PRODUCT_HARDWARE := muskie
 
 include device/google/muskie/device-common.mk
 
+DEVICE_PACKAGE_OVERLAYS += device/google/muskie/muskie/overlay
+
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560 \
 
