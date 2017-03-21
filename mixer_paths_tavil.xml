@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<!-- Copyright (c) 2015-2016, The Linux Foundation. All rights reserved.    -->
+<!-- Copyright (c) 2015-2017, The Linux Foundation. All rights reserved.    -->
 <!--                                                                        -->
 <!-- Redistribution and use in source and binary forms, with or without     -->
 <!-- modification, are permitted provided that the following conditions are -->
@@ -1727,6 +1727,31 @@
         <ctl name="ADC2 Volume" value="8" />
         <ctl name="DEC0 Volume" value="82" />
     </path>
+
+    <!-- USB TTY start -->
+
+    <!-- full: both end tty -->
+    <path name="voice-tty-full-usb">
+        <ctl name="TTY Mode" value="FULL" />
+        <path name="usb-headphones" />
+    </path>
+
+    <path name="voice-tty-full-usb-mic">
+        <path name="usb-headset-mic" />
+    </path>
+
+    <!-- vco, in: handset mic use existing, out: tty -->
+    <path name="voice-tty-vco-usb">
+        <ctl name="TTY Mode" value="VCO" />
+        <path name="usb-headphones" />
+    </path>
+
+    <!-- hco, in: tty, out: speaker, use existing handset -->
+    <path name="voice-tty-hco-usb-mic">
+        <path name="voice-tty-full-usb-mic" />
+    </path>
+
+    <!-- USB TTY end   -->
 
     <path name="listen-handset-mic">
         <ctl name="MADONOFF Switch" value="1" />
