@@ -51,6 +51,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.audio.fluence.voicerec=false \
     ro.config.vc_call_vol_steps=7
 
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+
 # Dumpstate HAL
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service.muskie
