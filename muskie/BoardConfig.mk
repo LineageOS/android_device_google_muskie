@@ -19,3 +19,5 @@ DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
 
 include device/google/wahoo/BoardConfig.mk
 -include vendor/google_devices/muskie/BoardConfigVendor.mk
+
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
