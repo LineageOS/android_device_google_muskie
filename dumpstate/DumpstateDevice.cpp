@@ -53,7 +53,7 @@ static void getModemLogs(int fd)
         return;
     }
     /* Check if smlog_dump tool exist */
-    if (!PropertiesHelper::IsUserBuild() && !access("/system/bin/smlog_dump", X_OK)) {
+    if (!PropertiesHelper::IsUserBuild() && !access("/vendor/bin/smlog_dump", X_OK)) {
         modemLogsEnabled = android::base::GetBoolProperty(MODEM_LOGGING_SWITCH, false);
 
         /* Execute SMLOG DUMP if SMLOG is enabled */
