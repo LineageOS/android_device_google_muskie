@@ -31,7 +31,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.radio.log_loc="/data/smlog_dump"
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.logging.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
+    $(LOCAL_PATH)/init.logging.rc:root/init.$(PRODUCT_HARDWARE).logging.rc \
+    $(LOCAL_PATH)/init.common.usb.rc:root/init.$(PRODUCT_HARDWARE).usb.rc
 endif
 
 include device/google/wahoo/device.mk
