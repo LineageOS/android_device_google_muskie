@@ -37,6 +37,9 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.logging.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
 endif
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/init-common.rc:vendor/etc/init/init-$(PRODUCT_HARDWARE).rc
+
 include device/google/wahoo/device.mk
 
 # Kernel modules
