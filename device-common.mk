@@ -54,3 +54,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Dumpstate HAL
 PRODUCT_PACKAGES += \
     android.hardware.dumpstate@1.0-service.muskie
+
+PRODUCT_COPY_FILES += \
+    device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
