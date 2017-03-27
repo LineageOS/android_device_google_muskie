@@ -678,6 +678,10 @@
         <path name="deep-buffer-playback speaker" />
     </path>
 
+    <path name="deep-buffer-playback voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia1" value="1" />
+    </path>
+
     <path name="low-latency-playback">
         <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
     </path>
@@ -734,6 +738,10 @@
         <path name="low-latency-playback speaker" />
     </path>
 
+    <path name="low-latency-playback voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia5" value="1" />
+    </path>
+
     <path name="audio-ull-playback">
         <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
@@ -764,6 +772,15 @@
         <path name="audio-ull-playback speaker" />
     </path>
 
+    <path name="audio-ull-playback bt-sco">
+        <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia8" value="1" />
+    </path>
+
+    <path name="audio-ull-playback bt-sco-wb">
+        <ctl name="BT SampleRate" value="KHZ_16" />
+        <path name="audio-ull-playback bt-sco" />
+    </path>
+
     <path name="audio-ull-playback afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia8" value="1" />
     </path>
@@ -779,6 +796,10 @@
     <path name="audio-ull-playback speaker-and-usb-headphones">
         <path name="audio-ull-playback usb-headphones" />
         <path name="audio-ull-playback speaker" />
+    </path>
+
+    <path name="audio-ull-playback voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia8" value="1" />
     </path>
 
     <path name="multi-channel-playback display-port">
@@ -843,6 +864,10 @@
     <path name="compress-offload-playback speaker-and-headphones">
         <path name="compress-offload-playback headphones" />
         <path name="compress-offload-playback speaker" />
+    </path>
+
+    <path name="compress-offload-playback voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX Audio Mixer MultiMedia4" value="1" />
     </path>
 
     <path name="audio-record">
@@ -922,6 +947,16 @@
 
     <path name="vowlan-call usb-headphones">
         <ctl name="USB_AUDIO_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer SLIM_0_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call usb-headset">
+        <ctl name="USB_AUDIO_RX_Voice Mixer VoWLAN" value="1" />
+        <ctl name="VoWLAN_Tx Mixer USB_AUDIO_TX_VoWLAN" value="1" />
+    </path>
+
+    <path name="vowlan-call voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX_Voice Mixer VoWLAN" value="1" />
         <ctl name="VoWLAN_Tx Mixer USB_AUDIO_TX_VoWLAN" value="1" />
     </path>
 
@@ -971,6 +1006,11 @@
         <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="1" />
     </path>
 
+    <path name="voicemmode1-call voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode1" value="1" />
+        <ctl name="VoiceMMode1_Tx Mixer USB_AUDIO_TX_MMode1" value="1" />
+    </path>
+
     <path name="voicemmode2-call">
         <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer SLIM_0_TX_MMode2" value="1" />
@@ -1014,6 +1054,11 @@
 
     <path name="voicemmode2-call usb-headset">
         <ctl name="USB_AUDIO_RX_Voice Mixer VoiceMMode2" value="1" />
+        <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="1" />
+    </path>
+
+    <path name="voicemmode2-call voice-tty-hco-handset">
+        <ctl name="QUAT_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
         <ctl name="VoiceMMode2_Tx Mixer USB_AUDIO_TX_MMode2" value="1" />
     </path>
 
@@ -1210,10 +1255,10 @@
     <!-- Ch1: 3rd mic DEC5/TX5, Ch2: 2nd mic DEC6/TX6, Ch3: 1st mic DEC7/TX7, Ch4 4th mic DEC8/TX8 -->
     <path name="unprocessed-quad-mic">
         <path name="quad-mic" />
-        <ctl name="DEC5 Volume" value="86" />
-        <ctl name="DEC6 Volume" value="86" />
-        <ctl name="DEC7 Volume" value="86" />
-        <ctl name="DEC8 Volume" value="86" />
+        <ctl name="DEC5 Volume" value="89" />
+        <ctl name="DEC6 Volume" value="89" />
+        <ctl name="DEC7 Volume" value="89" />
+        <ctl name="DEC8 Volume" value="89" />
     </path>
 
     <!-- three mic TX 3rd:DEC5 22dB, 2nd:DEC6 22dB, 1st:DEC7 22dB,-->
@@ -1224,12 +1269,12 @@
         <ctl name="DEC7 Volume" value="106" />
     </path>
 
-    <!-- Unprocessed-three-mic TX 3rd:DEC5 2dB, 2nd:DEC6 2dB, 1st:DEC7 2dB,-->
+    <!-- Unprocessed-three-mic TX 3rd:DEC5 5dB, 2nd:DEC6 5dB, 1st:DEC7 5dB,-->
     <path name="unprocessed-three-mic">
         <path name="three-mic" />
-        <ctl name="DEC5 Volume" value="86" />
-        <ctl name="DEC6 Volume" value="86" />
-        <ctl name="DEC7 Volume" value="86" />
+        <ctl name="DEC5 Volume" value="89" />
+        <ctl name="DEC6 Volume" value="89" />
+        <ctl name="DEC7 Volume" value="89" />
     </path>
 
     <!-- Sidetone -->
@@ -1332,26 +1377,26 @@
         <ctl name="DEC7 Volume" value="100" />
     </path>
 
-    <!-- Phone SPK TX 3rd:DEC5 4dB, 2nd:DEC6 4dB, 1st:DEC7 4dB,-->
+    <!-- Phone SPK TX 3rd:DEC5 0dB, 2nd:DEC6 0dB, 1st:DEC7 0dB,-->
     <path name="speaker-dmic-endfire">
         <path name="triple-mic" />
-        <ctl name="DEC5 Volume" value="88" />
-        <ctl name="DEC6 Volume" value="88" />
-        <ctl name="DEC7 Volume" value="88" />
+        <ctl name="DEC5 Volume" value="84" />
+        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC7 Volume" value="84" />
     </path>
 
-    <!-- SPKR_PHONE_MIC 3rd:DEC5 16dB, 2nd:DEC6 16dB, 1st:DEC7 16dB,-->
+    <!-- SPKR_PHONE_MIC 3rd:DEC5 0dB, 2nd:DEC6 0dB, 1st:DEC7 0dB,-->
     <path name="speaker-mic">
         <path name="triple-mic" />
-        <ctl name="DEC5 Volume" value="100" />
-        <ctl name="DEC6 Volume" value="100" />
-        <ctl name="DEC7 Volume" value="100" />
+        <ctl name="DEC5 Volume" value="84" />
+        <ctl name="DEC6 Volume" value="84" />
+        <ctl name="DEC7 Volume" value="84" />
     </path>
 
-    <!-- TX Main-mic D:4 dB -->
+    <!-- TX Main-mic D:0 dB -->
     <path name="handset-mic">
         <path name="dmic2" />
-        <ctl name="DEC7 Volume" value="88" />
+        <ctl name="DEC7 Volume" value="84" />
     </path>
 
     <!-- VR MIC 1st D:22 dB -->
@@ -1360,25 +1405,23 @@
         <ctl name="DEC7 Volume" value="106" />
     </path>
 
-    <!-- Unprocessed Handset MIC 1st D:2 dB -->
+    <!-- Unprocessed Handset MIC 1st D:5 dB -->
     <path name="unprocessed-handset-mic">
         <path name="voice-rec-mic" />
-        <ctl name="DEC7 Volume" value="86" />
+        <ctl name="DEC7 Volume" value="89" />
     </path>
 
-    <!-- CAMCORDER MIC 2nd:DEC6 4dB, 1st:DEC7 4dB, 3rd:DEC5 4dB -->
+    <!-- CAMCORDER MIC 2nd:DEC6 0dB-->
     <path name="camcorder-mic">
-        <path name="triple-mic-camcorder" />
-        <ctl name="DEC6 Volume" value="88" />
-        <ctl name="DEC7 Volume" value="88" />
-        <ctl name="DEC5 Volume" value="88" />
+        <path name="dmic4" />
+        <ctl name="DEC6 Volume" value="84" />
     </path>
 
-    <!-- TX Dual-mic 1st MIC D:4 dB, 2nd MIC:4 dB -->
+    <!-- TX Dual-mic 1st MIC D:0 dB, 2nd MIC:0 dB -->
     <path name="dmic-endfire">
         <path name="handset-dmic-endfire" />
-        <ctl name="DEC7 Volume" value="88" />
-        <ctl name="DEC6 Volume" value="88" />
+        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC6 Volume" value="84" />
     </path>
 
     <!-- Phone RCV TX Dual-mic 1st MIC D:13 dB, 2nd MIC:13 dB -->
@@ -1402,11 +1445,11 @@
         <ctl name="DEC6 Volume" value="106" />
     </path>
 
-    <!-- Unprocessed-stereo-mic 1st D:2 dB, 2nd D:2 dB -->
+    <!-- Unprocessed-stereo-mic 1st D:5 dB, 2nd D:5 dB -->
     <path name="unprocessed-stereo-mic">
         <path name="voice-rec-dmic-ef" />
-        <ctl name="DEC7 Volume" value="86" />
-        <ctl name="DEC6 Volume" value="86" />
+        <ctl name="DEC7 Volume" value="89" />
+        <ctl name="DEC6 Volume" value="89" />
     </path>
 
     <path name="handset">
@@ -1604,10 +1647,10 @@
         <path name="display-port" />
     </path>
 
-    <!-- Unprocessed MIC 1st D:2 dB -->
+    <!-- Unprocessed MIC 1st D:5 dB -->
     <path name="unprocessed-mic">
         <path name="dmic2" />
-        <ctl name="DEC7 Volume" value="86" />
+        <ctl name="DEC7 Volume" value="89" />
     </path>
 
     <path name="hdmi-tx">
@@ -1665,69 +1708,6 @@
         <path name="dmic-broadside" />
     </path>
 
-    <!-- TTY devices -->
-    <path name="tty-headphones">
-        <ctl name="SLIM RX2 MUX" value="AIF4_PB" />
-        <ctl name="SLIM RX3 MUX" value="AIF4_PB" />
-        <ctl name="SLIM_6_RX Channels" value="Two" />
-        <ctl name= "RX INT1_2 MUX" value="RX2" />
-        <ctl name= "RX INT2_2 MUX" value="RX3" />
-        <ctl name="RX INT1 DEM MUX" value="CLSH_DSM_OUT" />
-        <ctl name="RX INT2 DEM MUX" value="CLSH_DSM_OUT" />
-        <ctl name="COMP1 Switch" value="0" />
-        <ctl name="COMP2 Switch" value="0" />
-        <ctl name="RX1 Mix Digital Volume" value="84" />
-        <ctl name="RX2 Mix Digital Volume" value="84" />
-    </path>
-
-    <!-- TTY devices Full RX D:0 dB, A:-6dB -->
-    <path name="voice-tty-full-headphones">
-        <ctl name="TTY Mode" value="FULL" />
-        <path name="tty-headphones" />
-        <ctl name="RX1 Mix Digital Volume" value="84" />
-        <ctl name="RX2 Mix Digital Volume" value="84" />
-        <ctl name="HPHL Volume" value="16" />
-        <ctl name="HPHR Volume" value="16" />
-    </path>
-
-    <!-- TTY devices Full TX D:-2 dB, A:12dB -->
-    <path name="voice-tty-full-headset-mic">
-        <path name="adc2" />
-        <ctl name="ADC2 Volume" value="8" />
-        <ctl name="DEC0 Volume" value="82" />
-    </path>
-
-    <!-- TTY devices VCO RX D:0 dB, A:-6dB -->
-    <path name="voice-tty-vco-headphones">
-        <ctl name="TTY Mode" value="VCO" />
-        <path name="tty-headphones" />
-        <ctl name="RX1 Mix Digital Volume" value="84" />
-        <ctl name="RX2 Mix Digital Volume" value="84" />
-        <ctl name="HPHL Volume" value="16" />
-        <ctl name="HPHR Volume" value="16" />
-    </path>
-
-    <!-- TTY devices VCO SPK TX D:16 dB -->
-    <path name="voice-tty-vco-handset-mic">
-        <path name="triple-mic" />
-        <ctl name="DEC5 Volume" value="100" />
-        <ctl name="DEC6 Volume" value="100" />
-        <ctl name="DEC7 Volume" value="100" />
-    </path>
-
-    <!-- TTY devices HCO SPK RX -->
-    <path name="voice-tty-hco-handset">
-        <ctl name="TTY Mode" value="HCO" />
-        <path name="voice-speaker" />
-    </path>
-
-    <!-- TTY devices HCO TX D:-2 dB, A:12dB -->
-    <path name="voice-tty-hco-headset-mic">
-        <path name="voice-tty-full-headset-mic" />
-        <ctl name="ADC2 Volume" value="8" />
-        <ctl name="DEC0 Volume" value="82" />
-    </path>
-
     <!-- USB TTY start -->
 
     <!-- full: both end tty -->
@@ -1746,9 +1726,18 @@
         <path name="usb-headphones" />
     </path>
 
+    <path name="voice-tty-vco-handset-mic">
+        <path name="voice-speaker-dmic-ef" />
+    </path>
+
     <!-- hco, in: tty, out: speaker, use existing handset -->
+    <path name="voice-tty-hco-handset">
+        <ctl name="TTY Mode" value="HCO" />
+        <path name="voice-speaker" />
+    </path>
+
     <path name="voice-tty-hco-usb-mic">
-        <path name="voice-tty-full-usb-mic" />
+        <path name="usb-headset-mic" />
     </path>
 
     <!-- USB TTY end   -->
