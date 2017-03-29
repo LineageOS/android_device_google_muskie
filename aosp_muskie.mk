@@ -18,8 +18,9 @@ $(call inherit-product, device/google/muskie/device-muskie.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-muskie.mk)
 
 PRODUCT_PACKAGES += \
+    Dialer \
     Launcher3 \
-    Dialer
+    WallpaperPicker
 
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
