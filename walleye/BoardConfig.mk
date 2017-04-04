@@ -24,3 +24,4 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
 
 #sepolicy common to muskie/walleye
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
+TARGET_RECOVERY_FSTAB := device/google/muskie/fstab.hardware

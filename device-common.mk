@@ -62,3 +62,7 @@ PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 PRODUCT_COPY_FILES += \
     device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
+
+# TODO - Keep it common and move to wahoo
+PRODUCT_COPY_FILES += \
+    device/google/muskie/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE)
