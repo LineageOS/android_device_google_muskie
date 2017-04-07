@@ -74,3 +74,6 @@ PRODUCT_COPY_FILES += \
 # TODO - Keep it common and move to wahoo
 PRODUCT_COPY_FILES += \
     device/google/muskie/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE)
+
+PRODUCT_COPY_FILES += \
+    device/google/muskie/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
