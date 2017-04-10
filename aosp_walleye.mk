@@ -14,6 +14,11 @@
 # limitations under the License.
 #
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+
 $(call inherit-product, device/google/muskie/device-walleye.mk)
 $(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-walleye.mk)
 
