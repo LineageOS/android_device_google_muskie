@@ -20,11 +20,15 @@ PRODUCT_AAPT_PREBUILT_DPI := xxxhdpi xxhdpi xhdpi hdpi
 
 PRODUCT_HARDWARE := muskie
 
-include device/google/muskie/device-common.mk
-
+# DEVICE_PACKAGE_OVERLAYS for the device should be before
+# including common overlays since the one listed first
+# takes precedence.
+ifdef DEVICE_PACKAGE_OVERLAYS
+$(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PRODUCT_HARDWARE)' overlays)
+endif
 DEVICE_PACKAGE_OVERLAYS += device/google/muskie/muskie/overlay
+
+include device/google/muskie/device-common.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=560 \
-
-DEVICE_PACKAGE_OVERLAYS += device/google/muskie/muskie/overlay
