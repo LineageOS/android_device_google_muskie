@@ -16,6 +16,10 @@
 
 LOCAL_PATH := device/google/muskie
 
+# verity
+AB_OTA_PARTITIONS += \
+    vbmeta
+
 # Audio XMLs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
