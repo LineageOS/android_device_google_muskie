@@ -35,6 +35,7 @@
     <ctl name="Voice Rx Gain" id="0" value="0" />
     <ctl name="Voice Rx Gain" id="1" value="-1" />
     <ctl name="Voice Rx Gain" id="2" value="20" />
+    <ctl name="Voice Sidetone Enable" value="0" />
     <ctl name="Voip Tx Mute" id="0" value="0" />
     <ctl name="Voip Tx Mute" id="1" value="500" />
     <ctl name="Voip Rx Gain" id="0" value="0" />
@@ -1325,6 +1326,7 @@
     </path>
 
     <path name="sidetone-hac-handset">
+        <ctl name="Voice Sidetone Enable" value="1" />
     </path>
 
     <!-- SPK -->
