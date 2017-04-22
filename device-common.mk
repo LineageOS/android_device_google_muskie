@@ -68,4 +68,5 @@ PRODUCT_COPY_FILES += \
     device/google/muskie/fstab.hardware:root/fstab.$(PRODUCT_HARDWARE)
 
 PRODUCT_COPY_FILES += \
-    device/google/muskie/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf
+    device/google/muskie/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
+    device/google/muskie/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
