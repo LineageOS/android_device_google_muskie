@@ -33,7 +33,7 @@ ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.smlog_switch=1 \
     ro.radio.log_prefix="modem_log_" \
-    ro.radio.log_loc="/data/smlog_dump"
+    ro.radio.log_loc="/data/vendor/modem_dump"
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.logging.userdebug.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
