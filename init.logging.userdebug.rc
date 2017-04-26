@@ -1,4 +1,4 @@
-on property:init.svc.per_mgr=running
+on boot
     write /sys/class/uio/uio1/device/rtel/rtel 1
 
 on post-fs-data
