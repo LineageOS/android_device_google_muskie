@@ -54,12 +54,14 @@ ifeq (,$(filter muskie_clang walleye_clang, $(TARGET_PRODUCT)))
 PRODUCT_COPY_FILES += \
     device/google/wahoo-kernel/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \
     device/google/wahoo-kernel/synaptics_dsx_rmi_dev_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
+    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/htc_battery.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/htc_battery.ko
 else
 PRODUCT_COPY_FILES += \
     device/google/wahoo-kernel/clang/synaptics_dsx_core_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_core_htc.ko \
     device/google/wahoo-kernel/clang/synaptics_dsx_rmi_dev_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/clang/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
+    device/google/wahoo-kernel/clang/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/clang/htc_battery.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/htc_battery.ko
 endif
 
 PRODUCT_FULL_TREBLE_OVERRIDE := true
