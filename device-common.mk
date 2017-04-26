@@ -62,8 +62,6 @@ PRODUCT_COPY_FILES += \
     device/google/wahoo-kernel/clang/synaptics_dsx_fw_update_htc.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/synaptics_dsx_fw_update_htc.ko
 endif
 
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
 PRODUCT_COPY_FILES += \
     device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
