@@ -64,8 +64,6 @@ PRODUCT_COPY_FILES += \
     device/google/wahoo-kernel/clang/htc_battery.ko:$(TARGET_COPY_OUT_VENDOR)/lib/modules/htc_battery.ko
 endif
 
-PRODUCT_FULL_TREBLE_OVERRIDE := true
-
 PRODUCT_COPY_FILES += \
     device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
