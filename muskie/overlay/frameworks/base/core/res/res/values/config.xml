@@ -104,6 +104,8 @@
         <item>"usbradio:adb:diag,serial_cdev,rmnet_gsi,adb:diag,serial_cdev,rmnet_gsi"</item>
         <item>"usbradio:mtp,adb:diag,serial_cdev,rmnet_gsi,adb:diag,serial_cdev,rmnet_gsi"</item>
         <item>"usbradio:mtp:diag,serial_cdev,rmnet_gsi:diag,serial_cdev,rmnet_gsi"</item>
+        <item>"usbradio:rndis,adb:rndis,diag,adb:diag,serial_cdev,rmnet_gsi"</item>
+        <item>"usbradio:rndis:rndis,diag:diag,serial_cdev,rmnet_gsi"</item>
     </string-array>
 
 </resources>
