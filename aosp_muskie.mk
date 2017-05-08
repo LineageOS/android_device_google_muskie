@@ -21,7 +21,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 
 $(call inherit-product, device/google/muskie/device-muskie.mk)
-$(call inherit-product-if-exists, vendor/google_devices/muskie/device-vendor-muskie.mk)
+$(call inherit-product-if-exists, vendor/google_devices/muskie/proprietary/device-vendor-muskie.mk)
 
 PRODUCT_PACKAGES += \
     Dialer \
