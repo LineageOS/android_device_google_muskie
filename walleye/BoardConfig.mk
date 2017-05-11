@@ -26,3 +26,6 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 524288000
 
 #sepolicy common to muskie/walleye
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
+
+# Testing related defines
+BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/wahoo-setup.sh
