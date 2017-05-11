@@ -75,3 +75,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/muskie/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
+#IMU calibration
+PRODUCT_COPY_FILES += \
+    device/google/muskie/calibration_cad.xml:$(TARGET_COPY_OUT_VENDOR)/google/config/calibration_cad.xml
+
+#IMU calibration
+PRODUCT_PROPERTY_OVERRIDES += \
+  persist.config.calibration_cad=/system/vendor/google/config/calibration_cad.xml\
+  persist.config.calibration_fac=/persist/sensors/calibration/calibration.xml
