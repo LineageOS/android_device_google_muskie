@@ -70,3 +70,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/muskie/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     device/google/muskie/thermal-engine-vr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine-vr.conf
+
+# Wifi configuration file
+PRODUCT_COPY_FILES += \
+    device/google/muskie/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+
