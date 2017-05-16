@@ -36,15 +36,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.radio.log_loc="/data/vendor/modem_dump"
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.logging.userdebug.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
+    $(LOCAL_PATH)/init.logging.userdebug.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).logging.rc
 else
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.logging.rc:root/init.$(PRODUCT_HARDWARE).logging.rc
+    $(LOCAL_PATH)/init.logging.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).logging.rc
 endif
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init-common.rc:vendor/etc/init/init-$(PRODUCT_HARDWARE).rc \
-    $(LOCAL_PATH)/init.common.usb.rc:root/init.$(PRODUCT_HARDWARE).usb.rc \
+    $(LOCAL_PATH)/init-common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init-$(PRODUCT_HARDWARE).rc \
+    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).usb.rc \
     $(LOCAL_PATH)/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg
 
 include device/google/wahoo/device.mk
@@ -75,3 +75,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/muskie/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
+#IMU calibration
+PRODUCT_COPY_FILES += \
+    device/google/muskie/calibration_cad.xml:$(TARGET_COPY_OUT_VENDOR)/google/config/calibration_cad.xml
+
+#IMU calibration
+PRODUCT_PROPERTY_OVERRIDES += \
+  persist.config.calibration_cad=/system/vendor/google/config/calibration_cad.xml\
+  persist.config.calibration_fac=/persist/sensors/calibration/calibration.xml
