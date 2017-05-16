@@ -48,7 +48,12 @@
         <device name="SND_DEVICE_IN_VOICE_TTY_VCO_HANDSET_MIC" acdb_id="19"/>
         <device name="SND_DEVICE_IN_VOICE_TTY_FULL_USB_MIC" acdb_id="16"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_USB" acdb_id="17"/>
-        <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_USB" acdb_id="17"/>
+        <device name="SND_DEVICE_OUT_VOICE_USB_HEADPHONES" acdb_id="10"/>
+        <device name="SND_DEVICE_OUT_VOICE_USB_HEADSET" acdb_id="10"/>
+        <device name="SND_DEVICE_IN_USB_HEADSET_MIC_AEC" acdb_id="130	"/>
+        <device name="SND_DEVICE_IN_VOICE_USB_HEADSET_MIC" acdb_id="8"/>
+        <device name="SND_DEVICE_IN_UNPROCESSED_USB_HEADSET_MIC" acdb_id="143"/>
+        <device name="SND_DEVICE_IN_VOICE_RECOG_USB_HEADSET_MIC" acdb_id="44"/>
     </acdb_ids>
     <bit_width_configs>
         <device name="SND_DEVICE_OUT_SPEAKER" bit_width="24"/>
@@ -89,5 +94,12 @@
         <device name="SND_DEVICE_OUT_VOICE_TTY_HCO_HANDSET" backend="voice-tty-hco-handset" interface="QUAT_MI2S_RX"/>
         <device name="SND_DEVICE_IN_VOICE_TTY_HCO_USB_MIC" backend="usb-headset-mic" interface="USB_AUDIO_TX"/>
     </backend_names>
+    <gain_db_to_level_mapping>
+        <gain_level_map db="-8.6" level="4"/>
+        <gain_level_map db="-6.6" level="3"/>
+        <gain_level_map db="-4.5" level="2"/>
+        <gain_level_map db="-2.5" level="1"/>
+        <gain_level_map db="0" level="0"/>
+    </gain_db_to_level_mapping>
 </audio_platform_info>
 
