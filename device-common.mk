@@ -44,24 +44,32 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init-common.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init-$(PRODUCT_HARDWARE).rc \
-    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/init.$(PRODUCT_HARDWARE).usb.rc \
+    $(LOCAL_PATH)/init.common.usb.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.$(PRODUCT_HARDWARE).usb.rc \
     $(LOCAL_PATH)/init.insmod.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/init.insmod.cfg
 
 include device/google/wahoo/device.mk
 
 # Kernel modules
-ifeq (,$(filter muskie_clang walleye_clang, $(TARGET_PRODUCT)))
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/htc_battery.ko
-else
+ifeq (,$(filter-out muskie_clang walleye_clang, $(TARGET_PRODUCT)))
+# if TARGET_PRODUCT == *_clang
 BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/clang/synaptics_dsx_core_htc.ko \
     device/google/wahoo-kernel/clang/synaptics_dsx_rmi_dev_htc.ko \
     device/google/wahoo-kernel/clang/synaptics_dsx_fw_update_htc.ko \
     device/google/wahoo-kernel/clang/htc_battery.ko
+else ifeq (,$(filter-out muskie_gcc walleye_gcc, $(TARGET_PRODUCT)))
+# if TARGET_PRODUCT == *_gcc
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/gcc/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/gcc/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/gcc/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/gcc/htc_battery.ko
+else
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/htc_battery.ko
 endif
 
 PRODUCT_COPY_FILES += \
