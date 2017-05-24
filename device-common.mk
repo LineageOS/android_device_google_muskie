@@ -18,11 +18,9 @@ LOCAL_PATH := device/google/muskie
 
 # Audio XMLs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
-    $(LOCAL_PATH)/mixer_paths_tavil.xml:system/etc/mixer_paths_tavil.xml \
-    $(LOCAL_PATH)/audio_platform_info.xml:system/etc/audio_platform_info.xml \
-    $(LOCAL_PATH)/audio_platform_info_tavil.xml:system/etc/audio_platform_info_tavil.xml \
-    $(LOCAL_PATH)/audio_policy_volumes.xml:system/etc/audio_policy_volumes.xml
+    $(LOCAL_PATH)/mixer_paths_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tavil.xml \
+    $(LOCAL_PATH)/audio_platform_info_tavil.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_tavil.xml \
+    $(LOCAL_PATH)/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml
 
 # Enable SM log mechanism by default
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
