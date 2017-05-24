@@ -16,10 +16,6 @@
 
 LOCAL_PATH := device/google/muskie
 
-# verity
-AB_OTA_PARTITIONS += \
-    vbmeta
-
 # Audio XMLs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/mixer_paths_tasha.xml:system/etc/mixer_paths_tasha.xml \
@@ -81,7 +77,7 @@ PRODUCT_COPY_FILES += \
 
 # Wifi configuration file
 PRODUCT_COPY_FILES += \
-    device/google/muskie/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
+    device/google/muskie/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 
 #IMU calibration
 PRODUCT_COPY_FILES += \
