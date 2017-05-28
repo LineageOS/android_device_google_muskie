@@ -29,9 +29,10 @@ volume index from 0 to 100.
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_SPEAKER">
-        <point>0,-2000</point>
-        <point>14,-1650</point>
-        <point>86,-450</point>
+        <point>0,-2200</point>
+        <point>14,-1900</point>
+        <point>71,-800</point>
+        <point>86,-550</point>
         <point>100,0</point>
     </volume>
     <volume stream="AUDIO_STREAM_VOICE_CALL" deviceCategory="DEVICE_CATEGORY_EARPIECE">
