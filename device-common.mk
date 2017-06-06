@@ -58,6 +58,13 @@ BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/gcc/synaptics_dsx_rmi_dev_htc.ko \
     device/google/wahoo-kernel/gcc/synaptics_dsx_fw_update_htc.ko \
     device/google/wahoo-kernel/gcc/htc_battery.ko
+else ifeq (,$(filter-out muskie_kasan walleye_kasan, $(TARGET_PRODUCT)))
+# if TARGET_PRODUCT == *_kasan
+BOARD_VENDOR_KERNEL_MODULES += \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_core_htc.ko \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_rmi_dev_htc.ko \
+    device/google/wahoo-kernel/kasan/synaptics_dsx_fw_update_htc.ko \
+    device/google/wahoo-kernel/kasan/htc_battery.ko
 else
 BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/synaptics_dsx_core_htc.ko \
