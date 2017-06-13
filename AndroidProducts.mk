@@ -17,3 +17,4 @@
 PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/aosp_muskie.mk \
     $(LOCAL_DIR)/aosp_walleye.mk \
+    $(LOCAL_DIR)/aosp_walleye_test.mk \
