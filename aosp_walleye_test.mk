@@ -14,6 +14,6 @@
 # limitations under the License.
 #
 
-add_lunch_combo aosp_muskie-userdebug
-add_lunch_combo aosp_walleye-userdebug
-add_lunch_combo aosp_walleye_test-userdebug
+$(call inherit-product, device/google/muskie/aosp_walleye.mk)
+
+PRODUCT_NAME := aosp_walleye_test
