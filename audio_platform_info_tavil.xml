@@ -105,9 +105,9 @@
     </backend_names>
     <gain_db_to_level_mapping>
         <gain_level_map db="-70" level="4"/>
-        <gain_level_map db="-6.6" level="3"/>
-        <gain_level_map db="-4.5" level="2"/>
-        <gain_level_map db="-2.5" level="1"/>
+        <gain_level_map db="-12.5" level="3"/>
+        <gain_level_map db="-7.2" level="2"/>
+        <gain_level_map db="-3.6" level="1"/>
         <gain_level_map db="0" level="0"/>
     </gain_db_to_level_mapping>
     <app_types>
