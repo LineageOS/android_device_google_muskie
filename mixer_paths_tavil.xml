@@ -1475,6 +1475,8 @@
 
     <path name="speaker-safe">
         <path name="speaker" />
+        <ctl name="Stereo Configuration" value="8"/>
+        <ctl name="QUAT_MI2S_RX Channels" value="One"/>
     </path>
 
     <path name="speaker-reverse">
