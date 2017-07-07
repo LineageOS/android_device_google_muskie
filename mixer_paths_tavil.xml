@@ -1470,7 +1470,6 @@
 
     <path name="speaker">
         <path name="speaker-common" />
-        <ctl name="Swap channel" value="0" />
     </path>
 
     <path name="speaker-safe">
@@ -1481,7 +1480,6 @@
 
     <path name="speaker-reverse">
         <path name="speaker-common" />
-        <ctl name="Swap channel" value="1" />
     </path>
 
     <path name="speaker-mono">
