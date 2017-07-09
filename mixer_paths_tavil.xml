@@ -1470,7 +1470,6 @@
 
     <path name="speaker">
         <path name="speaker-common" />
-        <ctl name="Swap channel" value="0" />
     </path>
 
     <path name="speaker-safe">
@@ -1481,7 +1480,6 @@
 
     <path name="speaker-reverse">
         <path name="speaker-common" />
-        <ctl name="Swap channel" value="1" />
     </path>
 
     <path name="speaker-mono">
@@ -1563,6 +1561,7 @@
     <path name="camcorder-mic">
         <path name="dmic4" />
         <ctl name="DEC6 Volume" value="84" />
+        <ctl name="SLIM_0_TX Format" value="S24_LE" />
     </path>
 
     <!-- TX Dual-mic 1st MIC D:0 dB, 2nd MIC:0 dB -->
