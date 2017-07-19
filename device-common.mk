@@ -27,6 +27,10 @@ PRODUCT_PROPERTY_OVERRIDES += audio.adm.buffering.ms=3
 PRODUCT_PROPERTY_OVERRIDES += audio_hal.period_multiplier=2
 PRODUCT_PROPERTY_OVERRIDES += af.fast_track_multiplier=1
 
+# Pro audio feature
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.audio.pro.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.pro.xml
+
 # Enable SM log mechanism by default
 ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PROPERTY_OVERRIDES += \
