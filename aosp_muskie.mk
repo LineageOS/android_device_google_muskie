@@ -31,6 +31,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     device/google/muskie/audio_effects.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.conf
 
+PRODUCT_RESTRICT_VENDOR_FILES := owner
+
 PRODUCT_MANUFACTURER := Google
 PRODUCT_BRAND := Android
 PRODUCT_NAME := aosp_muskie
