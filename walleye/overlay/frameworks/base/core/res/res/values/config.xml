@@ -110,4 +110,9 @@
         <item>"usbradio:rndis,adb:rndis,diag,adb:diag,serial_cdev,rmnet_gsi"</item>
         <item>"usbradio:rndis:rndis,diag:diag,serial_cdev,rmnet_gsi"</item>
     </string-array>
+
+    <!-- Boolean indicating whether framework needs to set the tx power limit for meeting SAR requirements
+         during voice calls -->
+    <bool translatable="false" name="config_wifi_framework_enable_voice_call_sar_tx_power_limit">true</bool>
+
 </resources>
