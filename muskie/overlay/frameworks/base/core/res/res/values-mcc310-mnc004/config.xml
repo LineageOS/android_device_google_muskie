@@ -20,9 +20,10 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
+
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">g2pw2100</string>
+    <string name="config_mms_user_agent" translatable="false">g011a</string>
     <!-- MMS user agent prolfile url -->
-    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.vtext.com/htc/g2pw2100/g2pw2100.xml</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.vtext.com/google/g011a/g011a.xml</string>
 
 </resources>
