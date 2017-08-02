@@ -22,8 +22,8 @@
 <resources>
 
     <!-- MMS user agent string -->
-    <string name="config_mms_user_agent" translatable="false">g2pw4100</string>
+    <string name="config_mms_user_agent" translatable="false">g011a</string>
     <!-- MMS user agent prolfile url -->
-    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.vtext.com/htc/g2pw4100/g2pw4100.xml</string>
+    <string name="config_mms_user_agent_profile_url" translatable="false">http://uaprof.vtext.com/google/g011a/g011a.xml</string>
 
 </resources>
