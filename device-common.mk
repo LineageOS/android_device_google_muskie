@@ -126,3 +126,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_height=1024 \
     ro.hwui.text_large_cache_width=2048 \
     ro.hwui.text_large_cache_height=1024
+
+# NFC/camera interaction workaround - DO NOT COPY TO NEW DEVICES
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.camera.notify_nfc=1
