@@ -18,3 +18,24 @@ on property:sys.boot_completed=1
 
 on property:sys.boot_completed=1 && property:ro.build.type=user
     write /proc/sys/kernel/modules_disabled 1
+
+on init && property:ro.boot.revision=EVM
+    setprop ro.boot.hardware.revision 0.5
+
+on init && property:ro.boot.revision=EVT0
+    setprop ro.boot.hardware.revision 0.6
+
+on init && property:ro.boot.revision=EVT1
+    setprop ro.boot.hardware.revision 0.7
+
+on init && property:ro.boot.revision=EVT2
+    setprop ro.boot.hardware.revision 0.8
+
+on init && property:ro.boot.revision=DVT
+    setprop ro.boot.hardware.revision 1.0
+
+on init && property:ro.boot.revision=MP0 # PVT
+    setprop ro.boot.hardware.revision 1.0
+
+on init && property:ro.boot.revision=MP1
+    setprop ro.boot.hardware.revision 1.0
