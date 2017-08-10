@@ -1545,12 +1545,12 @@
         <ctl name="DEC7 Volume" value="84" />
     </path>
 
-    <!-- SPKR_PHONE_MIC 3rd:DEC5 0dB, 2nd:DEC6 0dB, 1st:DEC7 0dB,-->
+    <!-- SPKR_PHONE_MIC 3rd:DEC5 16dB, 2nd:DEC6 16dB, 1st:DEC7 16dB,-->
     <path name="speaker-mic">
         <path name="triple-mic" />
-        <ctl name="DEC5 Volume" value="84" />
-        <ctl name="DEC6 Volume" value="84" />
-        <ctl name="DEC7 Volume" value="84" />
+        <ctl name="DEC5 Volume" value="100" />
+        <ctl name="DEC6 Volume" value="100" />
+        <ctl name="DEC7 Volume" value="100" />
     </path>
 
     <!-- TX Main-mic D:0 dB -->
