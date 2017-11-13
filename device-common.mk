@@ -37,11 +37,11 @@ PRODUCT_COPY_FILES += \
 # 1 is AAUDIO_POLICY_NEVER  means only use Legacy path.
 # 2 is AAUDIO_POLICY_AUTO   means try MMAP then fallback to Legacy path.
 # 3 is AAUDIO_POLICY_ALWAYS means only use MMAP path.
-PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=1
+PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_policy=2
 # 1 is AAUDIO_POLICY_NEVER  means only use SHARED mode
 # 2 is AAUDIO_POLICY_AUTO   means try EXCLUSIVE then fallback to SHARED mode.
 # 3 is AAUDIO_POLICY_ALWAYS means only use EXCLUSIVE mode.
-PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_exclusive_policy=1
+PRODUCT_PROPERTY_OVERRIDES += aaudio.mmap_exclusive_policy=2
 
 # Increase the apparent size of a hardware burst from 1 msec to 2 msec.
 # A "burst" is the number of frames processed at one time.
@@ -76,21 +76,14 @@ PRODUCT_COPY_FILES += \
 include device/google/wahoo/device.mk
 
 # Kernel modules
-ifeq (,$(filter-out muskie_clang walleye_clang, $(TARGET_PRODUCT)))
-# if TARGET_PRODUCT == *_clang
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/clang/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/clang/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/clang/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/clang/htc_battery.ko
-else ifeq (,$(filter-out muskie_gcc walleye_gcc, $(TARGET_PRODUCT)))
+ifeq (,$(filter-out walleye_gcc, $(TARGET_PRODUCT)))
 # if TARGET_PRODUCT == *_gcc
 BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/gcc/synaptics_dsx_core_htc.ko \
     device/google/wahoo-kernel/gcc/synaptics_dsx_rmi_dev_htc.ko \
     device/google/wahoo-kernel/gcc/synaptics_dsx_fw_update_htc.ko \
     device/google/wahoo-kernel/gcc/htc_battery.ko
-else ifeq (,$(filter-out muskie_kasan walleye_kasan, $(TARGET_PRODUCT)))
+else ifeq (,$(filter-out walleye_kasan, $(TARGET_PRODUCT)))
 # if TARGET_PRODUCT == *_kasan
 BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/kasan/synaptics_dsx_core_htc.ko \
