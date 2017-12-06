@@ -104,11 +104,11 @@
         <device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB" backend="speaker-and-bt-sco-wb" interface="QUAT_MI2S_RX-and-SLIMBUS_7_RX"/>
     </backend_names>
     <gain_db_to_level_mapping>
-        <gain_level_map db="-70" level="4"/>
-        <gain_level_map db="-12.5" level="3"/>
-        <gain_level_map db="-7.2" level="2"/>
-        <gain_level_map db="-3.6" level="1"/>
-        <gain_level_map db="0" level="0"/>
+        <gain_level_map db="-70" level="5"/>
+        <gain_level_map db="-12.5" level="4"/>
+        <gain_level_map db="-7.2" level="3"/>
+        <gain_level_map db="-3.6" level="2"/>
+        <gain_level_map db="0" level="1"/>
     </gain_db_to_level_mapping>
     <app_types>
       <app uc_type="PCM_PLAYBACK" mode="default" bit_width="16" id="69936" max_rate="96000" />

@@ -39,3 +39,6 @@ on init && property:ro.boot.revision=MP0 # PVT
 
 on init && property:ro.boot.revision=MP1
     setprop ro.boot.hardware.revision 1.0
+
+on boot && property:ro.build.type=userdebug
+   write /sys/class/uio/uio1/device/rtel/rtel 1
