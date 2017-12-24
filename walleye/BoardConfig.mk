@@ -37,3 +37,6 @@ BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=3
 TARGET_RECOVERY_UI_LIB := \
     librecovery_ui_walleye \
     libfstab
+
+# Kernel
+TARGET_KERNEL_CONFIG := lineageos_muskie_defconfig
