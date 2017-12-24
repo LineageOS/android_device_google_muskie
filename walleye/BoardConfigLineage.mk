@@ -1,0 +1,1 @@
+TARGET_KERNEL_CONFIG := lineageos_muskie_defconfig

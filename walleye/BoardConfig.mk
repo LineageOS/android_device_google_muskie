@@ -39,3 +39,6 @@ BOARD_KERNEL_CMDLINE += androidboot.dtbo_idx=3
 TARGET_RECOVERY_UI_LIB := \
     librecovery_ui_walleye \
     libfstab
+
+# Allow Lineage config to override others
+-include device/google/muskie/walleye/BoardConfigLineage.mk
