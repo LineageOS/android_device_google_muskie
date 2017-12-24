@@ -16,3 +16,5 @@
 
 add_lunch_combo aosp_walleye-userdebug
 add_lunch_combo aosp_walleye_test-userdebug
+add_lunch_combo lineage_walleye-userdebug
+add_lunch_combo lineage_walleye-eng
