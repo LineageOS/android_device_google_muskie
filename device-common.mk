@@ -78,67 +78,6 @@ PRODUCT_COPY_FILES += \
 
 include device/google/wahoo/device.mk
 
-# Kernel modules
-ifeq (,$(filter-out walleye_kasan, $(TARGET_PRODUCT)))
-# if TARGET_PRODUCT == *_kasan
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/kasan/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/kasan/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/kasan/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/kasan/htc_battery.ko \
-    device/google/wahoo-kernel/kasan/wlan.ko
-else ifeq (,$(filter-out walleye_kernel_debug_memory, $(TARGET_PRODUCT)))
-# if TARGET == walleye_kernel_debug_memory
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/debug_memory/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/debug_memory/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/debug_memory/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/debug_memory/htc_battery.ko \
-    device/google/wahoo-kernel/debug_memory/wlan.ko
-else ifeq (,$(filter-out walleye_kernel_debug_locking, $(TARGET_PRODUCT)))
-# if TARGET == walleye_kernel_debug_locking
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/debug_locking/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/debug_locking/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/debug_locking/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/debug_locking/htc_battery.ko \
-    device/google/wahoo-kernel/debug_locking/wlan.ko
-else ifeq (,$(filter-out walleye_kernel_debug_hang, $(TARGET_PRODUCT)))
-# if TARGET == walleye_kernel_debug_hang
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/debug_hang/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/debug_hang/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/debug_hang/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/debug_hang/htc_battery.ko \
-    device/google/wahoo-kernel/debug_hang/wlan.ko
-else ifeq (,$(filter-out walleye_kernel_debug_api, $(TARGET_PRODUCT)))
-# if TARGET == walleye_kernel_debug_api
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/debug_api/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/debug_api/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/debug_api/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/debug_api/htc_battery.ko \
-    device/google/wahoo-kernel/debug_api/wlan.ko
-else ifneq (,$(TARGET_PREBUILT_KERNEL))
-    # If TARGET_PREBUILT_KERNEL is set, check whether there are modules packaged with that kernel
-    # image. If so, use them, otherwise fall back to the default directory.
-    TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES := \
-        $(wildcard $(dir $(TARGET_PREBUILT_KERNEL))/*.ko)
-    ifneq (,$(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES))
-        BOARD_VENDOR_KERNEL_MODULES += $(TARGET_PREBUILT_KERNEL_PREBUILT_VENDOR_KERNEL_MODULES)
-    else
-        BOARD_VENDOR_KERNEL_MODULES += $(wildcard device/google/wahoo-kernel/*.ko)
-    endif
-    # Do NOT delete TARGET_PREBUILT..., it will lead to empty BOARD_VENDOR_KERNEL_MODULES.
-else
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/htc_battery.ko \
-    device/google/wahoo-kernel/wlan.ko
-endif
-
 PRODUCT_COPY_FILES += \
     device/google/muskie/nfc/libnfc-nxp.muskie.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
 
