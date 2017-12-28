@@ -21,6 +21,7 @@ include device/google/wahoo/BoardConfig.mk
 -include vendor/google_devices/muskie/proprietary/BoardConfigVendor.mk
 
 BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+BOARD_DTBOIMG_PARTITION_SIZE := 8388608
 
 #sepolicy common to muskie/walleye
 BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
