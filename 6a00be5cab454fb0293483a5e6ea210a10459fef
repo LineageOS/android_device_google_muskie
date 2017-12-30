@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4a3517a2_baec30c8",
+        "filename": "lineage-proprietary-files.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 16082
+      },
+      "writtenOn": "2017-12-30T11:27:47Z",
+      "side": 1,
+      "message": "?",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 2
+      },
+      "revId": "6a00be5cab454fb0293483a5e6ea210a10459fef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
