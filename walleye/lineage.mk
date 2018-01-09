@@ -18,7 +18,7 @@ TARGET_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
-    BUILD_FINGERPRINT=google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys \
-    PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM1.171019.011 4448085 release-keys"
+    BUILD_FINGERPRINT=google/walleye/walleye:8.1.0/OPM1.171019.013/4474084:user/release-keys \
+    PRIVATE_BUILD_DESC="walleye-user 8.1.0 OPM1.171019.013 4474084 release-keys"
 
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
