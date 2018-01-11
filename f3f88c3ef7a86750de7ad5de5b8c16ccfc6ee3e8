@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "cce961f1_1886552e",
+        "filename": "extract-files.sh",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-01-11T09:29:23Z",
+      "side": 1,
+      "message": "This is from an old version of the scripts. See: https://github.com/LineageOS/android_vendor_lineage/blob/staging/lineage-15.1/build/templates/extract-files.sh#L37-L59",
+      "range": {
+        "startLine": 35,
+        "startChar": 0,
+        "endLine": 52,
+        "endChar": 48
+      },
+      "revId": "f3f88c3ef7a86750de7ad5de5b8c16ccfc6ee3e8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
