@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "090905db_e31ef19c",
+        "filename": "lineage-proprietary-files.txt",
+        "patchSetId": 15
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 7155
+      },
+      "writtenOn": "2018-01-18T07:52:17Z",
+      "side": 1,
+      "message": "What purpose does it serve to have presigned JARs?",
+      "revId": "e20d6ebb04ff5f9501c9a50ce2517450f736a217",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
