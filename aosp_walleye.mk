@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     Dialer \
     Launcher3 \
-    WallpaperPicker
+    WallpaperPicker \
+    vndk_package
 
 PRODUCT_COPY_FILES += \
     device/google/muskie/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
