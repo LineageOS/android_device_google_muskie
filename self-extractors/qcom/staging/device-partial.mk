@@ -32,7 +32,6 @@ PRODUCT_COPY_FILES := \
     vendor/qcom/walleye/proprietary/embmslibrary.jar:system/framework/embmslibrary.jar:qcom \
     vendor/qcom/walleye/proprietary/rcsimssettings.jar:system/framework/rcsimssettings.jar:qcom \
     vendor/qcom/walleye/proprietary/qcrilhook.jar:system/framework/qcrilhook.jar:qcom \
-    vendor/qcom/walleye/proprietary/vendor.qti.qcril.am-V1.0-java.jar:system/framework/vendor.qti.qcril.am-V1.0-java.jar:qcom \
     vendor/qcom/walleye/proprietary/lib64/com.qualcomm.qti.imsrtpservice@1.0.so:system/lib64/com.qualcomm.qti.imsrtpservice@1.0.so:qcom \
     vendor/qcom/walleye/proprietary/lib64/libaptX_encoder.so:system/lib64/libaptX_encoder.so:qcom \
     vendor/qcom/walleye/proprietary/lib64/libaptXHD_encoder.so:system/lib64/libaptXHD_encoder.so:qcom \
