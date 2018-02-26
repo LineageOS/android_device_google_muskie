@@ -58,12 +58,8 @@ lib/lib-imsvtutils.so
 lib/librcc.so
 
 # App
--app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
--app/ModemService/ModemService.apk
 -app/ims/ims.apk
--app/QtiTelephonyService/QtiTelephonyService.apk
--app/SSRestartDetector/SSRestartDetector.apk
 -app/Tycho/Tycho.apk;PRESIGNED
 -app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
 -app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
