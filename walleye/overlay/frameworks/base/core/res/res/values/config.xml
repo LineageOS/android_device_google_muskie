@@ -185,6 +185,13 @@
     <integer-array name="config_longPressVibePattern">
         <item>8</item>
     </integer-array>
+<<<<<<< HEAD
+=======
+
+    <!-- Boolean indicating whether framework needs to set the tx power limit for meeting SAR requirements
+         during voice calls -->
+    <bool translatable="false" name="config_wifi_framework_enable_voice_call_sar_tx_power_limit">true</bool>
+>>>>>>> b8c6451... Update long press vibe pattern.
 
     <!-- Whether the display blanks itself when transitioning from a doze to a non-doze state -->
     <bool name="config_displayBlanksAfterDoze">true</bool>
