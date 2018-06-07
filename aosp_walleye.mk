@@ -25,7 +25,7 @@ $(call inherit-product-if-exists, vendor/google_devices/muskie/proprietary/devic
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     Dialer \
-    Launcher3 \
+    Launcher3QuickStep \
     WallpaperPicker \
     vndk_package
 
