@@ -25,12 +25,13 @@ $(call inherit-product-if-exists, vendor/google_devices/muskie/proprietary/devic
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0 \
     Dialer \
-    Launcher3 \
+    Launcher3QuickStep \
     WallpaperPicker \
     vndk_package
 
 PRODUCT_COPY_FILES += \
-    device/google/muskie/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml
+    device/google/muskie/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    frameworks/native/data/etc/aosp_excluded_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/aosp_excluded_hardware.xml
 
 PRODUCT_RESTRICT_VENDOR_FILES := owner
 
