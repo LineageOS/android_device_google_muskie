@@ -22,4 +22,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 BUILD_FINGERPRINT := google/walleye/walleye:9/PPR2.181005.003/4984323:user/release-keys
 
+PRODUCT_RESTRICT_VENDOR_FILES := false
+
 $(call inherit-product-if-exists, vendor/google/walleye/walleye-vendor.mk)
