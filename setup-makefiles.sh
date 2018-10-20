@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,6 +18,8 @@ set -e
 
 VENDOR=google
 DEVICE=walleye
+
+INITIAL_COPYRIGHT_YEAR=2017
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
