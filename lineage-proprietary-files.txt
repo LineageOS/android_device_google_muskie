@@ -1,15 +1,61 @@
+### From Google extractors ###
+
 # CNE
 etc/cne/Nexus/ATT/ATT_profiles.xml
 etc/cne/Nexus/ROW/ROW_profiles.xml
 etc/cne/Nexus/VZW/VZW_profiles.xml
 
-# Firmware
+# Ambient Firmware
 etc/firmware/dnd.descriptor
 etc/firmware/dnd.sound_model
 etc/firmware/music_detector.descriptor
 etc/firmware/music_detector.sound_model
 
-# Permissions
+# Radio and IMS
+framework/cneapiclient.jar
+framework/com.quicinc.cne.api-V1.0-java.jar
+framework/com.quicinc.cne.jar
+framework/embmslibrary.jar
+framework/qcrilhook.jar
+framework/rcsimssettings.jar
+lib64/com.qualcomm.qti.imsrtpservice@1.0.so
+lib64/libdiag_system.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
+lib64/lib-imsvideocodec.so
+lib64/lib-imsvtextutils.so
+lib64/lib-imsvt.so
+lib64/lib-imsvtutils.so
+lib64/librcc.so
+lib/com.qualcomm.qti.imsrtpservice@1.0.so
+lib/libdiag_system.so
+lib/libimscamera_jni.so
+lib/libimsmedia_jni.so
+lib/lib-imsvideocodec.so
+lib/lib-imsvtextutils.so
+lib/lib-imsvt.so
+lib/lib-imsvtutils.so
+lib/librcc.so
+
+### Extra Lineage additions ###
+
+# AptX
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+
+# Easel
+-app/EaselServicePrebuilt/EaselServicePrebuilt.apk
+lib/libeaselcomm.so
+lib/libeaselcontrol.amber.so
+lib64/libeaselcomm.so
+lib64/libeaselcontrol.amber.so
+
+# Radio and IMS
+-app/embms/embms.apk
+-app/ims/ims.apk
+-app/Tycho/Tycho.apk;PRESIGNED
+-app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
+-app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
 etc/permissions/com.android.sdm.plugins.connmo.xml
 etc/permissions/com.android.sdm.plugins.sprintdm.xml
 etc/permissions/com.verizon.apn.xml
@@ -21,50 +67,10 @@ etc/permissions/features-verizon.xml
 etc/permissions/obdm_permissions.xml
 etc/permissions/privapp-permissions-wahoo.xml
 etc/permissions/vzw_mvs_permissions.xml
-
-# Jars
--framework/cneapiclient.jar;PRESIGNED
--framework/com.quicinc.cne.api-V1.0-java.jar;PRESIGNED
--framework/com.quicinc.cne.jar;PRESIGNED
--framework/embmslibrary.jar;PRESIGNED
--framework/rcsimssettings.jar;PRESIGNED
--framework/vendor.qti.qcril.am-V1.0-java.jar
--framework/VerizonUnifiedSettings.jar;PRESIGNED
-
-# Lib64
-lib64/com.qualcomm.qti.imsrtpservice@1.0.so
-lib64/libaptX_encoder.so
-lib64/libaptXHD_encoder.so
-lib64/libdiag_system.so
-lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so
-lib64/lib-imsvideocodec.so
-lib64/lib-imsvtextutils.so
-lib64/lib-imsvt.so
-lib64/lib-imsvtutils.so
-lib64/librcc.so
-
-# Lib
-lib/com.qualcomm.qti.imsrtpservice@1.0.so
-lib/libdiag_system.so
+framework/VerizonUnifiedSettings.jar
+framework/vendor.qti.qcril.am-V1.0-java.jar
 lib/libdmengine.so
 lib/libdmjavaplugin.so
-lib/libimscamera_jni.so
-lib/libimsmedia_jni.so
-lib/lib-imsvideocodec.so
-lib/lib-imsvtextutils.so
-lib/lib-imsvt.so
-lib/lib-imsvtutils.so
-lib/librcc.so
-
-# App
--app/embms/embms.apk
--app/ims/ims.apk
--app/Tycho/Tycho.apk;PRESIGNED
--app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
--app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
-
-# Priv-app
 -priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
 -priv-app/CarrierSetup/CarrierSetup.apk;PRESIGNED
 -priv-app/CNEService/CNEService.apk
@@ -82,5 +88,3 @@ lib/librcc.so
 -priv-app/SprintDM/SprintDM.apk
 -priv-app/SprintHM/SprintHM.apk
 -priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
-
-
