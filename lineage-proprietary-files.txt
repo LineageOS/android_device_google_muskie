@@ -68,9 +68,10 @@ etc/permissions/features-verizon.xml
 etc/permissions/obdm_permissions.xml
 etc/permissions/privapp-permissions-wahoo.xml
 etc/permissions/vzw_mvs_permissions.xml
-framework/VerizonUnifiedSettings.jar
-framework/vendor.qti.qcril.am-V1.0-java.jar
+framework/PowerAnomalyDataModemInterface.jar
 framework/PowerAnomalyQcril.jar
+framework/vendor.qti.qcril.am-V1.0-java.jar
+framework/VerizonUnifiedSettings.jar
 lib/libdmengine.so
 lib/libdmjavaplugin.so
 -priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
