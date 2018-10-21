@@ -54,8 +54,10 @@ lib64/libeaselcontrol.amber.so
 -app/embms/embms.apk
 -app/ims/ims.apk
 -app/Tycho/Tycho.apk;PRESIGNED
+-app/uceShimService/uceShimService.apk
 -app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
 -app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
+etc/permissions/com.android.omadm.service.xml
 etc/permissions/com.android.sdm.plugins.connmo.xml
 etc/permissions/com.android.sdm.plugins.sprintdm.xml
 etc/permissions/com.android.vzwomatrigger.xml
@@ -68,9 +70,11 @@ etc/permissions/features-verizon.xml
 etc/permissions/obdm_permissions.xml
 etc/permissions/privapp-permissions-wahoo.xml
 etc/permissions/vzw_mvs_permissions.xml
-framework/VerizonUnifiedSettings.jar
-framework/vendor.qti.qcril.am-V1.0-java.jar
+etc/sysconfig/whitelist_com.android.omadm.service.xml
+framework/PowerAnomalyDataModemInterface.jar
 framework/PowerAnomalyQcril.jar
+framework/vendor.qti.qcril.am-V1.0-java.jar
+framework/VerizonUnifiedSettings.jar
 lib/libdmengine.so
 lib/libdmjavaplugin.so
 -priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
