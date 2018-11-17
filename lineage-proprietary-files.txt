@@ -84,6 +84,8 @@ lib/libdmjavaplugin.so
 -priv-app/DCMO/DCMO.apk
 -priv-app/DiagMon/DiagMon.apk
 -priv-app/DMService/DMService.apk
+priv-app/EuiccGoogle/esim0.img
+-priv-app/EuiccGoogle/EuiccGoogle.apk;PRESIGNED
 -priv-app/HotwordEnrollmentOKGoogleWCD9340/HotwordEnrollmentOKGoogleWCD9340.apk;PRESIGNED
 -priv-app/HotwordEnrollmentTGoogleWCD9340/HotwordEnrollmentTGoogleWCD9340.apk;PRESIGNED
 -priv-app/HotwordEnrollmentXGoogleWCD9340/HotwordEnrollmentXGoogleWCD9340.apk;PRESIGNED
