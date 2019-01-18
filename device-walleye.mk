@@ -33,7 +33,8 @@ include device/google/muskie/device-common.mk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
 
-# Enable Perfetto traced
+# Enable Perfetto traced and heapprofd
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.traced.enable=1
+    persist.traced.enable=1 \
+    persist.heapprofd.enable=1
 
