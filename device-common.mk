@@ -79,15 +79,7 @@ PRODUCT_COPY_FILES += \
 include device/google/wahoo/device.mk
 
 # Kernel modules
-ifeq (,$(filter-out walleye_gcc, $(TARGET_PRODUCT)))
-# if TARGET_PRODUCT == *_gcc
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/gcc/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/gcc/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/gcc/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/gcc/htc_battery.ko \
-    device/google/wahoo-kernel/gcc/wlan.ko
-else ifeq (,$(filter-out walleye_kasan, $(TARGET_PRODUCT)))
+ifeq (,$(filter-out walleye_kasan, $(TARGET_PRODUCT)))
 # if TARGET_PRODUCT == *_kasan
 BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/kasan/synaptics_dsx_core_htc.ko \
@@ -95,14 +87,6 @@ BOARD_VENDOR_KERNEL_MODULES += \
     device/google/wahoo-kernel/kasan/synaptics_dsx_fw_update_htc.ko \
     device/google/wahoo-kernel/kasan/htc_battery.ko \
     device/google/wahoo-kernel/kasan/wlan.ko
-else ifeq (,$(filter-out walleye_kcfi, $(TARGET_PRODUCT)))
-# if TARGET_PRODUCT == *_kcfi
-BOARD_VENDOR_KERNEL_MODULES += \
-    device/google/wahoo-kernel/kcfi/synaptics_dsx_core_htc.ko \
-    device/google/wahoo-kernel/kcfi/synaptics_dsx_rmi_dev_htc.ko \
-    device/google/wahoo-kernel/kcfi/synaptics_dsx_fw_update_htc.ko \
-    device/google/wahoo-kernel/kcfi/htc_battery.ko \
-    device/google/wahoo-kernel/kcfi/wlan.ko
 else ifeq (,$(filter-out walleye_kernel_debug_memory, $(TARGET_PRODUCT)))
 # if TARGET == walleye_kernel_debug_memory
 BOARD_VENDOR_KERNEL_MODULES += \
