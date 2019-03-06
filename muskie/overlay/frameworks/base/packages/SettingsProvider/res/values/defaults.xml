@@ -18,9 +18,5 @@
 -->
 <resources>
     <!-- Default for Settings.Global.APPLY_RAMPING_RINGER -->
-<<<<<<< HEAD
     <bool name="def_apply_ramping_ringer">false</bool>
-=======
-    <bool name="def_apply_ramping_ringer">true</bool>
->>>>>>> c2644e7... Enable ramping ringer by default for walleye devices.
 </resources>
