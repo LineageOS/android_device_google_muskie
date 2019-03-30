@@ -37,12 +37,22 @@ fi
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
+# Default to full extraction
+VENDORIMG_ONLY=false
+
 while [ "$1" != "" ]; do
     case $1 in
         -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
         -s | --section )        shift
                                 SECTION=$1
+                                CLEAN_VENDOR=false
+                                ;;
+        -v | --vendorimg )      shift
+                                VENDORIMG_PATH=$1
+                                ;;
+        -vo | --vendorimgonly ) shift
+                                VENDORIMG_ONLY=true
                                 CLEAN_VENDOR=false
                                 ;;
         * )                     SRC=$1
@@ -58,6 +68,16 @@ fi
 # Initialize the helper
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
-extract "$MY_DIR"/lineage-proprietary-files.txt "$SRC" "$SECTION"
+# Extract system blobs
+if [[ $VENDORIMG_ONLY = false ]]; then
+    extract "$MY_DIR"/lineage-proprietary-files.txt "$SRC" "$SECTION"
+fi
 
+# Pull the list of files from the vendorimage
+"$MY_DIR"/regen-vendor.sh $VENDORIMG_PATH "$MY_DIR"/vendor-proprietary-files.txt
+
+# Extract the vendorimage files
+extract "$MY_DIR"/vendor-proprietary-files.txt "$SRC"
+
+# Generate makefiles
 "$MY_DIR"/setup-makefiles.sh
