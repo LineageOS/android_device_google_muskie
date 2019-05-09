@@ -48,4 +48,3 @@ PRODUCT_COPY_FILES := \
     vendor/qcom/walleye/proprietary/libiperf.so:system/lib/libiperf.so:qcom \
     vendor/qcom/walleye/proprietary/librcc.so:system/lib/librcc.so:qcom \
     vendor/qcom/walleye/proprietary/iperf3:system/xbin/iperf3:qcom \
-    vendor/qcom/walleye/proprietary/sanitizer-status:system/xbin/sanitizer-status:qcom \
