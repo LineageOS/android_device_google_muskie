@@ -77,7 +77,6 @@ framework/vendor.qti.qcril.am-V1.0-java.jar
 framework/VerizonUnifiedSettings.jar
 lib/libdmengine.so
 lib/libdmjavaplugin.so
--priv-app/CarrierServices/CarrierServices.apk;PRESIGNED
 -priv-app/CarrierSetup/CarrierSetup.apk;PRESIGNED
 -priv-app/CNEService/CNEService.apk
 -priv-app/ConnMO/ConnMO.apk
