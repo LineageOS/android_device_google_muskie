@@ -18,9 +18,9 @@ TARGET_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
-    PRIVATE_BUILD_DESC="walleye-user 9 PQ1A.190105.004 5148680 release-keys"
+    PRIVATE_BUILD_DESC="walleye-user 9 PQ3A.190605.003 5524043 release-keys"
 
-BUILD_FINGERPRINT := google/walleye/walleye:9/PQ1A.190105.004/5148680:user/release-keys
+BUILD_FINGERPRINT := google/walleye/walleye:9/PQ3A.190605.003/5524043:user/release-keys
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
