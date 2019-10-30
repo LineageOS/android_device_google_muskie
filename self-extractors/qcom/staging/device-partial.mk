@@ -12,6 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# AOSP packages required by the blobs
+PRODUCT_PACKAGES := \
+    ims
+
 #  blob(s) necessary for Walleye hardware
 PRODUCT_COPY_FILES := \
     vendor/qcom/walleye/proprietary/ATT_profiles.xml:system/etc/cne/Nexus/ATT/ATT_profiles.xml:qcom \
