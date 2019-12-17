@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/google/walleye/aosp_walleye.mk)
+$(call inherit-product, device/google/muskie/aosp_walleye.mk)
 PRODUCT_NAME := aosp_walleye_hwasan
 
 # Add "hwaddress" as a global sanitizer if it's missing.
