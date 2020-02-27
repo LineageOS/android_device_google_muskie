@@ -31,9 +31,6 @@ $(warning Overlays defined in '$(DEVICE_PACKAGE_OVERLAYS)' will override '$(PROD
 endif
 DEVICE_PACKAGE_OVERLAYS += device/google/muskie/walleye/overlay
 
-PRODUCT_PACKAGES += \
-    TelephonyOverlay2017Walleye
-
 include device/google/muskie/device-common.mk
 
 PRODUCT_PROPERTY_OVERRIDES += \
