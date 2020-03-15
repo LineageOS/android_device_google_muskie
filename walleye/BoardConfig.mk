@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+# Allow Lineage config to override others
+-include device/google/muskie/BoardConfigLineage.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := walleye
 DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
