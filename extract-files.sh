@@ -59,5 +59,6 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/lineage-proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/lineage-proprietary-vendor-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
