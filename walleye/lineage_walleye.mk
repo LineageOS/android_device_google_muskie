@@ -14,7 +14,6 @@ $(call inherit-product, device/google/muskie/aosp_walleye.mk)
 PRODUCT_NAME := lineage_walleye
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2
-TARGET_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=walleye \
