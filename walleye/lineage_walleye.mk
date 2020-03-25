@@ -14,7 +14,6 @@ include device/google/muskie/device-lineage.mk
 PRODUCT_NAME := lineage_walleye
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2
-TARGET_MANUFACTURER := Google
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
