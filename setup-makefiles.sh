@@ -19,7 +19,7 @@ set -e
 VENDOR=google
 DEVICE=walleye
 
-INITIAL_COPYRIGHT_YEAR=2017
+INITIAL_COPYRIGHT_YEAR=2018
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -57,7 +57,7 @@ write_walleye_headers
 
 # The standard blobs
 write_makefiles "$MY_DIR"/lineage-proprietary-files.txt
-write_makefiles "$MY_DIR"/lineage-proprietary-vendor-files.txt
+write_makefiles "$MY_DIR"/lineage-proprietary-vendor-files.txt true
 
 # Done
 write_footers
