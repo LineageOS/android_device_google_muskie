@@ -36,10 +36,6 @@ include device/google/muskie/device-common.mk
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=420
 
-# Enable Perfetto traced
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.traced.enable=1
-
 # Thermal HAL
 PRODUCT_COPY_FILES += \
     device/google/muskie/thermal_info_config.json:$(TARGET_COPY_OUT_VENDOR)/etc/thermal_info_config.json
