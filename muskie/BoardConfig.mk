@@ -1,5 +1,5 @@
 #
-# Copyright 2015 The Android Open Source Project
+# Copyright (C) 2016 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,13 +14,18 @@
 # limitations under the License.
 #
 
-PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_muskie.mk \
-    $(LOCAL_DIR)/aosp_walleye.mk \
-    $(LOCAL_DIR)/aosp_walleye_test.mk \
-    $(LOCAL_DIR)/aosp_walleye_hwasan.mk \
+TARGET_BOOTLOADER_BOARD_NAME := muskie
+DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS := 0x00000056
 
-COMMON_LUNCH_CHOICES := \
-	aosp_muskie-userdebug \
-    aosp_walleye-userdebug \
-    aosp_walleye_test-userdebug
+include device/google/wahoo/BoardConfig.mk
+-include vendor/google_devices/muskie/proprietary/BoardConfigVendor.mk
+
+BOARD_BOOTIMAGE_PARTITION_SIZE := 33554432
+
+#sepolicy common to muskie/walleye
+BOARD_SEPOLICY_DIRS += device/google/muskie/sepolicy
+
+# Testing related defines
+BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/wahoo-setup.sh
+
+BOARD_LISA_TARGET_SCRIPTS := device/google/wahoo/lisa/
