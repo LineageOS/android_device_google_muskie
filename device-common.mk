@@ -88,6 +88,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/muskie/powerhint.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.json
 
+# Shims
+PRODUCT_PACKAGES += \
+    libgui_shim
+
 # Wifi configuration file
 PRODUCT_COPY_FILES += \
     device/google/muskie/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
