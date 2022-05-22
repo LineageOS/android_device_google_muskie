@@ -100,6 +100,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1
 
-# Shims
-PRODUCT_PACKAGES += \
-    lib-imsvtshim
