@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f231b7a7_0bc0002e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3917
+      },
+      "writtenOn": "2022-05-23T07:44:41Z",
+      "side": 1,
+      "message": "Minor nitpicks: remove first include (it\u0027s not used and not C++ and use nullptr :)",
+      "revId": "71cd62cd694be943ab8c6952cbb5975fa230679d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
