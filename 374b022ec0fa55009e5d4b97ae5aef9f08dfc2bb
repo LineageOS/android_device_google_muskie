@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5591d232_bb62a93a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3917
+      },
+      "writtenOn": "2022-11-03T22:01:29Z",
+      "side": 1,
+      "message": "the first lines should not be swapped i suppose",
+      "revId": "374b022ec0fa55009e5d4b97ae5aef9f08dfc2bb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
