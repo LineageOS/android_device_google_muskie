@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "529d7550_8425dfa7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 5911
+      },
+      "writtenOn": "2023-03-17T19:41:22Z",
+      "side": 1,
+      "message": "https://review.lineageos.org/c/LineageOS/android_device_oneplus_msm8998-common/+/351143",
+      "revId": "f7c6581ce8a053232069c7c26e945854bef2cb0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
