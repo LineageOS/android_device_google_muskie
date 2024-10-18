@@ -17,9 +17,8 @@ PRODUCT_MODEL := Pixel 2
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=walleye \
-    PRIVATE_BUILD_DESC="walleye-user 11 RP1A.201005.004.A1 6934943 release-keys"
-
-BUILD_FINGERPRINT := google/walleye/walleye:11/RP1A.201005.004.A1/6934943:user/release-keys
+    BuildDesc="walleye-user 11 RP1A.201005.004.A1 6934943 release-keys" \
+    BuildFingerprint=google/walleye/walleye:11/RP1A.201005.004.A1/6934943:user/release-keys \
+    DeviceName=walleye
 
 $(call inherit-product, vendor/google/walleye/walleye-vendor.mk)
